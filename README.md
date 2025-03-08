@@ -1,2 +1,14 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=17800182&assignment_repo_type=AssignmentRepo)
-2Cents
+## Project Title
+
+2cents
+
+## Group Members
+
+- Audrey (Parastoo) Safikhani
+- Brett Rodrigues
+- Agrim Joshi
+- Wilson Tu
+
+## Breif Description
+
+This project is a web-based personal financial advisor designed to help users track income and expenses while improving financial literacy through interactive tools. It addresses the widespread lack of financial knowledge, which contributes to debt, insufficient savings, and financial stress. By integrating APIs and a user-friendly design, the app provides budgeting, expense tracking, and goal-setting features tailored to various user groups, including young adults, professionals, families, low-income individuals, and newcomers. It fills a market gap by combining financial tracking with accessible education, empowering users to make informed financial decisions.
