@@ -1,0 +1,24 @@
+# Ignore Node.js dependencies
+backend/node_modules/
+frontend/node_modules/
+node_modules/  # In case there's a root-level node_modules
+
+# Ignore lock files (prevents conflicts in teams using npm/yarn/pnpm)
+backend/package-lock.json
+backend/yarn.lock
+frontend/package-lock.json
+frontend/yarn.lock
+
+# Ignore environment files (to protect secrets)
+**/.env*
+**/.env.local*
+**/.env.development*
+**/.env.production*
+
+# Ignore build outputs
+frontend/dist/
+backend/build/
+
+# Ignore logs
+logs/
+*.log
