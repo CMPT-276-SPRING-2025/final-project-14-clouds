@@ -103,10 +103,25 @@ async function genBalance(){
 
 
 
-app.get("/",async(req,res) => {
+app.get("/getBalance",async(req,res) => {
     console.log("hi");
     const Balance =  await genBalance();
-    res.json(Balance);
+    
+    const accounts = Balance.accounts;
+    console.log(accounts);
+    const reqAccounts = accounts.filter((account)=>
+        account.subtype === "checking" || account.subtype ==="savings"
+    );
+
+    res.json(
+        {
+            checkingAmmount:reqAccounts[0].balances.current,
+            savingAmmount:reqAccounts[1].balances.current
+        
+        
+        }
+        
+        );
    
 });
 
