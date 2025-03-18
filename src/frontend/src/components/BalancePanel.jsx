@@ -1,6 +1,52 @@
 import "../styling/BalancePanel.css";
+import { useEffect, useState } from "react";
 
-function BalancePanel({ checkings, savings, total }) {
+function BalancePanel() {
+  const [checkings, setCheckings] = useState(0);
+  const [savings, setSavings] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  async function connectEndPoint() {
+    const accountBalances = await fetch(
+      `${import.meta.env.VITE_API_URL}/getBalance`
+    );
+
+    const accountBalances2 = await accountBalances.json();
+
+    setCheckings(accountBalances2.checkingAmount);
+    setSavings(accountBalances2.savingAmount);
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      await connectEndPoint();
+    }
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    setTotal(checkings + savings);
+  }, [checkings, savings]);
+
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        class="panel"
+      >
+        <div style={{ marginLeft: "0px" }} class="tbalance">
+          <p style={{ fontSize: "40px", fontWeight: "bold" }}>Loading...</p>
+        </div>
+      </div>
+    );
+  }
   return (
     <>
       <div class="panel">

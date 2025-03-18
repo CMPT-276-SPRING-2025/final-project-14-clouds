@@ -1,6 +1,7 @@
 //dummy file
 import "dotenv/config";
 import express from "express";
+import cors from "cors";
 const app = express();
 
 
@@ -101,7 +102,11 @@ async function genBalance(){
 
 
 
-
+app.use(cors({
+    origin:`http://localhost:${process.env.ORIGIN}`,
+    methods:"GET,POST",
+    credentials: true,
+}));
 
 app.get("/getBalance",async(req,res) => {
     console.log("hi");
@@ -115,9 +120,8 @@ app.get("/getBalance",async(req,res) => {
 
     res.json(
         {
-            checkingAmmount:reqAccounts[0].balances.current,
-            savingAmmount:reqAccounts[1].balances.current
-        
+            checkingAmount:reqAccounts[0].balances.current,
+            savingAmount:reqAccounts[1].balances.current
         
         }
         
