@@ -1,4 +1,4 @@
-import { GlobalStyles } from "@mui/material";
+
 import "../styles.css";
 
 function Goals() {
