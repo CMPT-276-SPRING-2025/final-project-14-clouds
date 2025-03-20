@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.login{
+    height: 100vh;
+    background: #17384B; 
+    font-family: 'Poppins', sans-serif; 
+}
+  h1{
+    font-size: 2.5em;
+    position: absolute;
+    top: 15vh;
+    left: 20vw; 
+    color: #D7D8D2; 
+    text-align: left;
+    white-space: nowrap; 
+    display: inline-block;
+    overflow: hidden;
+   
+  }
+  /* overlay for image*/
+.profile-circle {
+    position: absolute;
+    top: 20vh;
+    left: 55vw;
+    width: 30vw;
+    height: 55vh;
+    z-index: 1;
+  }
+
+  .log-button {
+    position: absolute;
+    display: flex;
+    align-items: center;  
+    justify-content: center; 
+    top: 65vh;
+    left: 27vw;
+    background: #0CD1A5;
+    color: #010203;
+    width: 15vw; 
+    height: 8vh;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+.plaid-logo{
+    position: absolute;
+    top: 37vh;
+    left: 30vw;
+    width: 10vw;
+    height: 20vh;
+    border-radius: 20px;
+}
+
+.glowing-circle {
+    position: absolute;
+    top: 43vh;
+    left: 33vw;
+    width: 3vw; /* Controls the size of the shadow */
+    height: 3vw; /* Make width and height equal */
+    border-radius: 50%;
+    background: transparent; /* Makes the center invisible */
+    box-shadow: 0 0 5vw 5vw rgba(192, 222, 239, 0.7); /* Gradient shadow effect */
+}
