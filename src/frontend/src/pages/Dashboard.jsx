@@ -1,7 +1,7 @@
 import "../styling/menu.css";
 import { Link } from "react-router-dom";
 import Logo from "../styling/Removal-906.png";
-
+import BalancePanel from "../components/BalancePanel";
 
 function Dashboard() {
   return (
@@ -21,6 +21,7 @@ function Dashboard() {
         <li><Link to="/Advice">Advice</Link></li>
       </ul>
     </nav>
+  <BalancePanel/>
   </>
 );
 }

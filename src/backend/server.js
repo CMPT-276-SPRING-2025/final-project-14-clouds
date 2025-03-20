@@ -108,6 +108,16 @@ app.use(cors({
     credentials: true,
 }));
 
+app.get("/api/transactions", (req, res) => {
+    const transactions = [
+        { date: "2024-03-18", category: "Food", amount: 12.99 },
+        { date: "2024-03-17", category: "Transport", amount: 5.50 },
+        { date: "2024-03-16", category: "Shopping", amount: 34.99 },
+        { date: "2024-03-15", category: "Entertainment", amount: 15.00 }
+    ];
+    res.json(transactions);
+});
+
 app.get("/getBalance",async(req,res) => {
     console.log("hi");
     const Balance =  await genBalance();
@@ -140,6 +150,5 @@ app.get("/test",(req,res) => {
 });
 
 app.listen(PORT, () =>{
-    console.log(`Server is listengin on port ${PORT}`);
+    console.log(`Server is listening on port ${PORT}`);
 });
-
