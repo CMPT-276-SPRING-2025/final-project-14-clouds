@@ -1,7 +1,7 @@
 import "../../styling/BalancePanel.css";
 import { useEffect, useState } from "react";
 
-function BalancePanel() {
+function BalancePanel2() {
   const [checkings, setCheckings] = useState(0);
   const [savings, setSavings] = useState(0);
   const [total, setTotal] = useState(0);
@@ -11,7 +11,6 @@ function BalancePanel() {
     const accountBalances = await fetch(
       `${import.meta.env.VITE_API_URL}/getBalance`
     );
-
     const accountBalances2 = await accountBalances.json();
 
     setCheckings(accountBalances2.checkingAmount);
@@ -23,7 +22,6 @@ function BalancePanel() {
     async function fetchData() {
       await connectEndPoint();
     }
-
     fetchData();
   }, []);
 
@@ -33,53 +31,34 @@ function BalancePanel() {
 
   if (loading) {
     return (
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-        class="panel"
-      >
-        <div style={{ marginLeft: "0px" }} class="tbalance">
-          <p style={{ fontSize: "40px", fontWeight: "bold" }}>Loading...</p>
-        </div>
+      <div className="panel">
+        <p className="loading-text">Loading...</p>
       </div>
     );
   }
+
   return (
-    <>
-      <div class="panel">
-        <h2> Your Balance</h2>
+    <div className="panel">
+      <h2 className="balance-title">Your Balance</h2>
+      <hr className="divider" />
 
-        <div class="tbalance">
-          <p>Total Balance:</p>
-          <br></br>
-          <p style={{ fontSize: "40px", fontWeight: "bold" }}>${total}</p>
-        </div>
+      <div className="balance-container">
+        <p className="total-balance">${total.toFixed(2)}</p>
 
-        <div class="details">
-          <p>Chequing:</p>
-          <p
-            style={{
-              fontSize: "24px",
-              fontWeight: "bold",
-              marginTop: "-15px",
-            }}
-          >
-            ${checkings}
+        <div className="balance-column">
+          <p>
+            <span className="label">Chequing:</span> 
+            <span className="amount">${checkings.toFixed(2)}</span>
           </p>
-
-          <p>Savings:</p>
-          <p
-            style={{ fontSize: "24px", fontWeight: "bold", marginTop: "-15px" }}
-          >
-            ${savings}
+          <br />
+          <p>
+            <span className="label">Savings:</span> 
+            <span className="amount">${savings.toFixed(2)}</span>
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
-export default BalancePanel;
+export default BalancePanel2;

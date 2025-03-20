@@ -1,9 +1,9 @@
-import "../styling/menu.css";
-import { Link } from "react-router-dom";
-import Logo from "../styling/Removal-906.png";
+import BalancePanel2 from "../components/BalancePanel2";
+import TransactionsPanel from "../components/TransactionsPanel";
 
 function AccountActivity() {
   return (
+
     <>
       <div className="nav"></div>
 

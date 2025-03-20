@@ -31,7 +31,7 @@ function TransactionsPanel() {
 
   return (
     <div className="panel transactions-panel">
-      <h2>Recent Transactions</h2>
+      <h2>Account Activity</h2>
 
       {/*Show Loading Spinner */}
       {loading && (
