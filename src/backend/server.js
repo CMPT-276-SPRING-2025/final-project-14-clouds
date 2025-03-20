@@ -102,6 +102,7 @@ app.get("/getBalance", async (req, res) => {
         return res.status(500).json({ error: "Failed to fetch balance data from Plaid" });
     }
 
+
     // Filter Checking & Savings Accounts
     const accounts = balanceData.accounts.filter(acc =>
         acc.subtype === "checking" || acc.subtype === "savings"
@@ -115,6 +116,7 @@ app.get("/getBalance", async (req, res) => {
         checkingAmount: accounts[0]?.balances?.current || 0,
         savingAmount: accounts[1]?.balances?.current || 0,
     });
+
 });
 
 // Route: Get Transactions

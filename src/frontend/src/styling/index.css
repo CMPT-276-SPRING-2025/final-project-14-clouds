@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.welcome{
+    height: 100vh;
+    background-color: #17384B !important; 
+    font-family: 'Poppins', sans-serif; 
+}
+
+  h1{
+    font-size: 2.5em;
+    position: absolute;
+    top: 35vh;
+    left: 20vw; 
+    color: #D7D8D2; 
+    text-align: left;
+    white-space: nowrap; /* Prevents text from wrapping */
+    display: inline-block;
+    overflow: hidden;
+   
+  }
+  /* overlay for profile pic*/
+.profile-circle {
+    position: absolute;
+    top: 1vh;
+    left: 40vw;
+    width: 50vw;
+    height: 100vh;
+    z-index: 1;
+  }
+  .glowing-circle {
+    position: absolute;
+    top: 30vh;
+    left: 70vw;
+    width: 20vw; /* Controls the size of the shadow */
+    height: 20vw; /* Make width and height equal */
+    border-radius: 50%;
+    background: transparent; /* Makes the center invisible */
+    box-shadow: 0 0 5vw 5vw rgba(192, 222, 239, 0.7); /* Gradient shadow effect */
+}
+
+.start-button {
+    position: absolute;
+    display: flex;
+    align-items: center;  /* Center vertically */
+    justify-content: center; 
+    top: 65vh;
+    left: 20vw;
+    background: #0CD1A5;
+    color: #010203;
+    width: 11vw; 
+    height: 8vh;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
