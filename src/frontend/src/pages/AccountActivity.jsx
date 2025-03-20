@@ -1,28 +1,46 @@
-import "../styling/menu.css";
-import { Link } from "react-router-dom";
-import Logo from "../styling/Removal-906.png";
+import BalancePanel2 from "../components/BalancePanel2";
+import TransactionsPanel from "../components/TransactionsPanel";
 
 function AccountActivity() {
   return (
-    <>
-    <div className="nav">
+    <div 
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+        textAlign: "center",
+      }}
+    >
+      <h2>Account Activity</h2>
+      <div 
+        style={{
+          width: "100%",
+          maxWidth: "600px",
+          padding: "20px",
+          borderRadius: "10px",
+          backgroundColor: "#f9f9f9",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <BalancePanel2 />
+      </div>
+      <div 
+        style={{
+          width: "100%",
+          maxWidth: "600px",
+          padding: "20px",
+          marginTop: "20px",
+          borderRadius: "10px",
+          backgroundColor: "#f9f9f9",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <TransactionsPanel />
+      </div>
     </div>
-
-    <nav className="menu">
-      <ul>
-        <li>
-          <img src={Logo} alt="profile logo" className="logo" />
-        </li>
-        <li><Link to="/Dashboard">Dashboard</Link></li>
-        <li><Link to="/AccountActivity">Account Activity</Link></li>
-        <li><Link to="/Goals">My Goals</Link></li>
-        <li><Link to="/Analytics">Analytics</Link></li>
-        <li><Link to="/Advice">Advice</Link></li>
-      </ul>
-    </nav>
-  </>
-);
+  );
 }
-
 
 export default AccountActivity;
