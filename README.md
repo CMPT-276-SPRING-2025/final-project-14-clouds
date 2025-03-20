@@ -2,12 +2,6 @@
 
 2cents
 
-## Group Members
-
-- Audrey (Parastoo) Safikhani
-- Brett Rodrigues
-- Agrim Joshi
-- Wilson Tu
 
 ## Breif Description
 
