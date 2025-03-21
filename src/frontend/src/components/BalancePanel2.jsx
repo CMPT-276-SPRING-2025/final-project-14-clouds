@@ -50,7 +50,7 @@ function BalancePanel2() {
             <span className="label">Chequing:</span> 
             <span className="amount">${checkings.toFixed(2)}</span>
           </p>
-          <br />
+      
           <p>
             <span className="label">Savings:</span> 
             <span className="amount">${savings.toFixed(2)}</span>
