@@ -75,27 +75,30 @@ function TransactionsPanel() {
 
       {/*Show Transactions Table */}
       {!loading && !error && filteredTransactions.length > 0 && (
-        <table className="transactions-table">
-          <thead>
+        <div className="transactions-table-container">
+          <table className="transactions-table">
+            <thead>
             <tr>
               <th>Merchant</th>
               <th>Amount</th>
               <th>Date</th>
             </tr>
-          </thead>
-          <tbody>
-            {filteredTransactions.map((tx, index) => (
-              <tr key={index}>
-                <td>{tx.merchant_name || tx.name || "Unknown Merchant"}</td>
-                <td className={tx.amount < 0 ? "negative" : "positive"}>
-                  {tx.amount < 0 ? `-$${Math.abs(tx.amount).toFixed(2)}` : `+$${tx.amount.toFixed(2)}`}
-                </td>
-                <td>{new Date(tx.date).toLocaleDateString()}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+            </thead>
+      <tbody>
+        {filteredTransactions.map((tx, index) => (
+          <tr key={index}>
+            <td>{tx.merchant_name || tx.name || "Unknown Merchant"}</td>
+            <td className={tx.amount < 0 ? "negative" : "positive"}>
+              {tx.amount < 0 ? `-$${Math.abs(tx.amount).toFixed(2)}` : `+$${tx.amount.toFixed(2)}`}
+              </td>
+            <td>{new Date(tx.date).toLocaleDateString()}</td>
+          </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+)}
+
     </div>
   );
 }

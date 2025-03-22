@@ -106,3 +106,18 @@ th, td {
     text-align: center;
     font-style: italic;
 }
+.transactions-table-container {
+    max-height: 627px; /* or any height you prefer */
+    overflow-y: auto;
+    margin-top: 10px;
+    border-top: 1px solid #D5D7D8;
+  }
+  
+  /* Optional: Make table rows sticky headers for better UX */
+  .transactions-table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #17384B;
+    z-index: 1;
+  }
+  
