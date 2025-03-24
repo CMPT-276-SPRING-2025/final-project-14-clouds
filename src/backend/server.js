@@ -65,13 +65,22 @@ async function genBalance(accessToken) {
 
 //Fetch Transactions
 async function genTransactions(accessToken) {
+    const today= new Date();
+    const lastMonth= new Date();
+    lastMonth.setMonth(today.getMonth()-1);
+
+    const formatDate=(date)=>date.toISOString().split("T")[0];
+
+    const start_date =formatDate(lastMonth);
+    const end_date =formatDate(today);
+
     return await fetchFromPlaid("https://sandbox.plaid.com/transactions/get", {
         client_id: CLIENT_ID,
         secret: SECRET_PLAID_KEY,
         access_token: accessToken,
-        start_date: "2024-01-01",
-        end_date: "2025-03-18",
-        options: { count: 10 }, // Fetch last 10 transactions
+        start_date: start_date,
+        end_date:  end_date,
+        options: { count: 100 }, // Fetch last 50 transactions
     });
 }
 
