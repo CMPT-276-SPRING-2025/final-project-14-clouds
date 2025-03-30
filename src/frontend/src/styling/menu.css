@@ -2,7 +2,7 @@
 
 
 
-.menu {
+.menuPanel {
     width: 300px;
     position: fixed;
     top: 6vh; /* Start below the nav bar */
@@ -49,14 +49,14 @@
     height: 10vh;
     object-fit: contain;
 }
-.menu ul {
+.menuPanel ul {
     list-style: none;
     padding: 0;
     margin: 0;
     width: 100%;
   }
 
-.menu li {
+.menuPanel li {
     padding: 25px;
     text-align: left;
     margin-left: 10px;
@@ -66,17 +66,17 @@
     list-style: none;
 }
 
-.menu li:hover, .menu .active {
+.menuPanel li:hover, .menu .active {
     background-color: #00ffaa;
     color: #17384B;
     border-radius: 10px;
 }
 
-.menu li:hover a {
+.menuPanel li:hover a {
     color: #17384B;
 }
 
-.menu li a {
+.menuPanel li a {
     color: #D5D7D8;
     text-decoration: none;
     font-size: 20px;

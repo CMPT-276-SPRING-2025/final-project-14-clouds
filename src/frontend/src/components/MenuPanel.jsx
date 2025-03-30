@@ -12,7 +12,7 @@ function MenuPanel() {
         <img src={Logo} alt="profile logo" className="logo" />
       </div>
       </div>
-      <nav className="menu">
+      <nav className="menuPanel">
         <ul>
           <li><Link to="/Dashboard">Dashboard</Link></li>
           <li><Link to="/AccountActivity">Account Activity</Link></li>
