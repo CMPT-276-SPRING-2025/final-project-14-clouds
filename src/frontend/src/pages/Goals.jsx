@@ -1,24 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styling/goals.css";
 import "../styling/menu.css";
 import { Link } from "react-router-dom";
-import Logo from "../styling/Removal-906.png"; 
+import Logo from "../styling/Removal-906.png";
+import SmallGoals from "../components/smallgoals";
+import BigGoals from "../components/largegoals";
+import AddGoal from "../components/addgoals";
 
-const Goals = () => {
-  const [goals, setGoals] = useState([]);
-  const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState("");
-  const [date, setDate] = useState("");
+const Goals = ({ goals, setGoals }) => {
+  useEffect(() => console.log(goals), [goals]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (title && amount && date) {
-      setGoals([...goals, { title, amount, date }]);
-      setTitle("");
-      setAmount("");
-      setDate("");
-    }
-  };
+  // const [title, setTitle] = useState("");
+  // const [amount, setAmount] = useState("");
+  // const [date, setDate] = useState("");
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   if (title && amount && date) {
+  //     setGoals([...goals, { title, amount, date }]);
+  //     setTitle("");
+  //     setAmount("");
+  //     setDate("");
+  //   }
+  // };
 
   return (
     <>
@@ -28,19 +32,31 @@ const Goals = () => {
           <li>
             <img src={Logo} alt="profile logo" className="logo" />
           </li>
-          <li><Link to="/Dashboard">Dashboard</Link></li>
-          <li><Link to="/AccountActivity">Account Activity</Link></li>
-          <li><Link to="/Goals">My Goals</Link></li>
-          <li><Link to="/Analytics">Analytics</Link></li>
-          <li><Link to="/Advice">Advice</Link></li>
+          <li>
+            <Link to="/Dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/AccountActivity">Account Activity</Link>
+          </li>
+          <li>
+            <Link to="/Goals">My Goals</Link>
+          </li>
+          <li>
+            <Link to="/Analytics">Analytics</Link>
+          </li>
+          <li>
+            <Link to="/Advice">Advice</Link>
+          </li>
         </ul>
       </nav>
-      <div className="your-goals-small"></div>
+
+      {/* <div className="your-goals-small"></div>
       <div className="your-goals-big">
         <h3>Your Goals</h3>
         {goals.map((goal, index) => (
           <div key={index} className="goal-item">
-            <strong>{goal.title}</strong> - ${goal.amount} (Achieve by: {goal.date})
+            <strong>{goal.title}</strong> - ${goal.amount} (Achieve by:{" "}
+            {goal.date})
           </div>
         ))}
       </div>
@@ -66,8 +82,13 @@ const Goals = () => {
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
-        <button type="submit" onClick={handleSubmit}>Add Goal</button>
-      </div>
+        <button type="submit" onClick={handleSubmit}>
+          Add Goal
+        </button>
+      </div> */}
+      <SmallGoals />
+      <BigGoals goalsArray={goals} />
+      <AddGoal onAddGoal={setGoals} />
     </>
   );
 };

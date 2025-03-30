@@ -21,6 +21,7 @@ body{
     box-shadow: #17384B;
     font-family: 'Poppins', sans-serif;
     white-space: nowrap;
+    display: flex;
 }
 
 
@@ -97,12 +98,13 @@ h2{
     background: #17384B;
     box-shadow: #17384B;
     font-family: 'Poppins', sans-serif;
+    color: #D5D7D8; ;
+    z-index: 0;
+   
 
 }
 h3{
-    position: absolute;
-    top: 55vh;
-    left: 30vw;
+    margin: auto;
     font: 2em ;
     color: #D5D7D8;
     z-index: 2;
