@@ -1,26 +1,32 @@
-import "../styling/menu.css";
-import { Link } from "react-router-dom";
-import Logo from "../styling/Removal-906.png";
+import "../styling/AccountActivity.css"
+import BalancePanel2 from "../components/BalancePanel2";
+import MenuPanel from "../components/MenuPanel";
+import TransactionsPanel from "../components/TransactionsPanel"
+import OverviewPanel from "../components/OverviewPanel";
+
+
+
 
 function AccountActivity() {
   return (
 
-    <>
-      <div className="nav"></div>
+    <div className="AccountActivity-page">
 
-      <nav className="menu">
-        <ul>
-          <li>
-            <img src={Logo} alt="profile logo" className="logo" />
-          </li>
-          <li><Link to="/Dashboard">Dashboard</Link></li>
-          <li><Link to="/AccountActivity">Account Activity</Link></li>
-          <li><Link to="/Goals">My Goals</Link></li>
-          <li><Link to="/Analytics">Analytics</Link></li>
-          <li><Link to="/Advice">Advice</Link></li>
-        </ul>
-      </nav>
-    </>
+      <MenuPanel />
+
+      <div className="content-container">
+
+        <div className="account-activity-content">
+          <BalancePanel2 />
+          <TransactionsPanel />
+        </div>
+        <div className="account-activity-content1">
+          <div className="panel placeholder-panel">Goals Panel (Coming Soon)</div>
+          <OverviewPanel />
+        </div>
+      </div>
+    </div>
+
   );
 }
 
