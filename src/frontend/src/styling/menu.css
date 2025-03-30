@@ -1,67 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
-
 .menu {
-    width: 300px;
-    position: fixed;
-    top: 6vh; /* Start below the nav bar */
-    left: 0;
-    height: 100%; /* Remaining height below the nav */
+    width: 250px;
     background-color: #17384B;
     color: #D5D7D8;
-    display: flex;
-    flex-direction: column;
+    border-color:#D5D7D8 ;
+    list-style: none; 
+    position: absolute;
+    height: 100vh;
+    width: 20vw;
+    top: 0vh;
+    left: -2vw;
     align-items: center;
-    padding-top: 40px;
-    box-sizing: border-box;
-    z-index: 90;
-    border-right: 1px solid #D5D7D8;
+    padding-top: 20px;
 }
-
-.nav {
-    position: fixed;
+.nav{
+    position: absolute;
     width: 100vw;
     height: 10vh;
-    top: 0;
-    left: 0;
-    z-index: 100;
+    top: 0vh; 
     background-color: #17384B;
-    border-bottom: 1px solid #D5D7D8;
+    border-color:#D5D7D8 ;
     font-family: 'Poppins', sans-serif;
-    align-items: start;
 }
-.logo-container {
-    width: 300px; /* Same as .menu */
-    height: 10vh; /* Match nav height */
-    background-color: #17384B;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 1px solid #D5D7D8;
-    border-bottom: 1px solid #D5D7D8;
-  }
 .logo {
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: -3vh;
     left: 6vw;
     width: 10vw;
-    height: 10vh;
-    object-fit: contain;
+    height: 20vh;  
 }
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
 
 .menu li {
     padding: 25px;
-    text-align: left;
-    margin-left: 10px;
+    text-align: center;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; 
     transition: 0.3s;
     list-style: none;
 }
@@ -72,14 +47,13 @@
     border-radius: 10px;
 }
 
-.menu li:hover a {
+.menu li:hover a{
     color: #17384B;
 }
 
-.menu li a {
+.menu li a{
     color: #D5D7D8;
     text-decoration: none;
     font-size: 20px;
-    display: block;
     font-family: 'Poppins', sans-serif;
 }

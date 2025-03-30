@@ -4,6 +4,9 @@ import MenuPanel from "../components/MenuPanel";
 import TransactionsPanel from "../components/TransactionsPanel"
 import OverviewPanel from "../components/OverviewPanel";
 
+
+
+
 function AccountActivity() {
   return (
 
@@ -23,8 +26,8 @@ function AccountActivity() {
         </div>
       </div>
     </div>
+
   );
 }
-
 
 export default AccountActivity;
