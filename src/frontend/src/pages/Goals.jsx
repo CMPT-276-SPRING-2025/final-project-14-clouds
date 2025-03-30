@@ -10,20 +10,6 @@ import AddGoal from "../components/addgoals";
 const Goals = ({ goals, setGoals }) => {
   useEffect(() => console.log(goals), [goals]);
 
-  // const [title, setTitle] = useState("");
-  // const [amount, setAmount] = useState("");
-  // const [date, setDate] = useState("");
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   if (title && amount && date) {
-  //     setGoals([...goals, { title, amount, date }]);
-  //     setTitle("");
-  //     setAmount("");
-  //     setDate("");
-  //   }
-  // };
-
   return (
     <>
       <div className="nav"></div>
@@ -50,44 +36,8 @@ const Goals = ({ goals, setGoals }) => {
         </ul>
       </nav>
 
-      {/* <div className="your-goals-small"></div>
-      <div className="your-goals-big">
-        <h3>Your Goals</h3>
-        {goals.map((goal, index) => (
-          <div key={index} className="goal-item">
-            <strong>{goal.title}</strong> - ${goal.amount} (Achieve by:{" "}
-            {goal.date})
-          </div>
-        ))}
-      </div>
-      <div className="set-goal">
-        <div className="set-goal-title">Set a New Goal</div>
-        <input
-          type="text"
-          name="title"
-          placeholder="Goal Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="number"
-          name="amount"
-          placeholder="Target Amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
-        <input
-          type="date"
-          name="achieve-by"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
-        <button type="submit" onClick={handleSubmit}>
-          Add Goal
-        </button>
-      </div> */}
       <SmallGoals />
-      <BigGoals goalsArray={goals} />
+      <BigGoals goalsArray={goals} setterFunction={setGoals} />
       <AddGoal onAddGoal={setGoals} />
     </>
   );

@@ -9,7 +9,7 @@ const AddGoal = ({ onAddGoal }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (title && amount && date) {
-      onAddGoal((prev) => [...prev, { title, amount, date }]);
+      onAddGoal((prev) => [...prev, { title, amount, date, progress: 0 }]);
       setTitle("");
       setAmount("");
       setDate("");
@@ -31,7 +31,7 @@ const AddGoal = ({ onAddGoal }) => {
         name="amount"
         placeholder="Target Amount"
         value={amount}
-        onChange={(e) => setAmount(e.target.value)}
+        onChange={(e) => setAmount(parseFloat(e.target.value))}
       />
       <input
         type="date"
