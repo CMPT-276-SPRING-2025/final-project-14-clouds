@@ -28,6 +28,22 @@ const BigGoals = ({ goalsArray, setterFunction }) => {
         >
           <button
             onClick={() => {
+              alert(`deleted index ${index}`);
+              const updatedGoalsArray = goalsArray.filter(
+                (value, i) => index !== i
+              );
+
+              const updatedIncrements = increments.filter(
+                (value, i) => index !== i
+              );
+              setterFunction(updatedGoalsArray);
+              setIncrements(updatedIncrements);
+            }}
+          >
+            Delete
+          </button>
+          <button
+            onClick={() => {
               const updatedGoals = goalsArray.map((value, i) => {
                 if (i === index) {
                   if (

@@ -36,7 +36,7 @@ const Goals = ({ goals, setGoals }) => {
         </ul>
       </nav>
 
-      <SmallGoals />
+      <SmallGoals goalsArray={goals} />
       <BigGoals goalsArray={goals} setterFunction={setGoals} />
       <AddGoal onAddGoal={setGoals} />
     </>
