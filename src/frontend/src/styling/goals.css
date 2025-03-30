@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: #33586E;  
+    font-family: 'Poppins', sans-serif; 
+}
+
+.your-goals-small{
+    position: absolute;
+    top: 15vh;
+    left: 25vw;
+    width:25vw;
+    height: 38vh;
+    border-radius: 20px;
+    background: #17384B;
+    box-shadow: #17384B;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+}
+
+
+h2{
+    position: absolute;
+    top: 22vh;
+    left: 30vw;
+    padding: 0px;
+    font: 1em ;
+    color: #D5D7D8;
+    
+}
+
+.set-goal {
+    position: absolute;
+    top: 15vh;
+    left: 52vw;
+    width: 37vw;
+    height: 38vh;
+    border-radius: 20px;
+    background: #17384B;
+    box-shadow: #17384B;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px; /* Adds space inside */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers input fields */
+}
+
+.set-goal-title{
+    position: absolute;
+    top: 20vh;
+    left: 52vw;
+    padding: 0px;
+    font: 1em ;
+    color: #D5D7D8;
+}
+
+.set-goal input {
+    margin-top: 10%;
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #406881;
+    border-radius: 5px;
+    background: #406881;
+    color: #D5D7D8;
+} 
+
+.set-goal button {
+    width: 7vw;
+    padding: 10px;
+    border: none;
+    background: #00ff99;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.set-goal button:hover {
+    background: #00cc77;
+}
+
+
+.your-goals-big{
+    position: absolute;
+    top: 55vh;
+    left: 25vw;
+    width:65vw;
+    height: 40vh;
+    border-radius: 20px;
+    background: #17384B;
+    box-shadow: #17384B;
+    font-family: 'Poppins', sans-serif;
+
+}
+h3{
+    position: absolute;
+    top: 55vh;
+    left: 30vw;
+    font: 2em ;
+    color: #D5D7D8;
+    z-index: 2;
+
+}
+.goal-item {
+    color: white;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
