@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styling/goals.css";
+import Bin from "../assets/bin.png";
 
 const BigGoals = ({ goalsArray, setterFunction }) => {
   const [increments, setIncrements] = useState(goalsArray.map((value) => 0));
@@ -18,15 +19,9 @@ const BigGoals = ({ goalsArray, setterFunction }) => {
   } else {
     goalsArray.map((value, index) => {
       listGoals.push(
-        <div
-          style={{
-            border: "solid",
-            display: "flex",
-            width: "100%",
-            justifyContent: "center",
-          }}
-        >
+        <div className="goal-item">
           <button
+            className="deleteButton"
             onClick={() => {
               alert(`deleted index ${index}`);
               const updatedGoalsArray = goalsArray.filter(
@@ -40,9 +35,10 @@ const BigGoals = ({ goalsArray, setterFunction }) => {
               setIncrements(updatedIncrements);
             }}
           >
-            Delete
+            <img src={Bin} alt="bin icon" />
           </button>
           <button
+            className="plusButton"
             onClick={() => {
               const updatedGoals = goalsArray.map((value, i) => {
                 if (i === index) {
@@ -61,10 +57,11 @@ const BigGoals = ({ goalsArray, setterFunction }) => {
               setterFunction(updatedGoals);
             }}
           >
-            +
+            <p>+</p>
           </button>
           &nbsp;
           <input
+            className="incrementInput"
             id="input"
             onChange={(e) => {
               if (e.target.value !== "") {
@@ -82,6 +79,7 @@ const BigGoals = ({ goalsArray, setterFunction }) => {
           ></input>
           &nbsp;
           <button
+            className="minusButton"
             onClick={() => {
               const updatedGoals = goalsArray.map((value, i) => {
                 if (i === index) {
@@ -102,18 +100,53 @@ const BigGoals = ({ goalsArray, setterFunction }) => {
           >
             -
           </button>
-          <p style={{ marginLeft: "28vw" }}>
-            Name: {value.title}, {value.progress}/{value.amount}, date:{" "}
-            {value.date}
-          </p>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                width: "90%",
+              }}
+            >
+              <p>{value.title}</p>
+              <p>{value.date}</p>
+              <p>
+                ${value.progress}/${value.amount}
+              </p>
+            </div>
+            <div className="progressBar">
+              <div
+                className="progressBarFill"
+                style={{ width: `${(value.progress / value.amount) * 100}%` }}
+              ></div>
+            </div>
+          </div>
         </div>
       );
     });
 
     return (
       <div className="your-goals-big">
-        <h3>Your Goals</h3>
-        <div style={{ marginBottom: "20vh" }}>{listGoals}</div>
+        <h3
+          style={{
+            position: "absolute",
+            top: "2vh",
+            left: "1.5vw",
+            borderBottom: "solid",
+            width: "95%",
+          }}
+        >
+          Your Goals
+        </h3>
+        <div className="goalsList">{listGoals}</div>
       </div>
     );
   }

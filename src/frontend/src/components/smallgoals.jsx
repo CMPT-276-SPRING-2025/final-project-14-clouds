@@ -11,10 +11,33 @@ const SmallGoals = ({ goalsArray }) => {
   }
   return (
     <div className="your-goals-small">
-      <h3> Hello</h3>
-      <h3>
-        {totalProgress}/{totalAmmount}
-      </h3>
+      <div
+        style={{
+          textAlign: "left",
+          width: "85%",
+
+          marginTop: "-5vh",
+        }}
+      >
+        <p
+          style={{
+            fontSize: "22px",
+            fontWeight: 600,
+            color: "#DFD7D8",
+          }}
+        >
+          Your Goals
+        </p>
+      </div>
+
+      <div className="smallGoalsInfo">
+        <p>
+          ${totalProgress}/
+          <span style={{ fontWeight: "500", fontSize: "22px" }}>
+            ${totalAmmount}
+          </span>
+        </p>
+      </div>
     </div>
   );
 };
