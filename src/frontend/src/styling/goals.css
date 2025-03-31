@@ -21,10 +21,15 @@ body{
     box-shadow: #17384B;
     font-family: 'Poppins', sans-serif;
     white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 
-h2{
+/* h2{
     position: absolute;
     top: 22vh;
     left: 30vw;
@@ -32,7 +37,7 @@ h2{
     font: 1em ;
     color: #D5D7D8;
     
-}
+} */
 
 .set-goal {
     position: absolute;
@@ -52,7 +57,7 @@ h2{
 }
 
 .set-goal-title{
-    position: absolute;
+    
     top: 20vh;
     left: 52vw;
     padding: 0px;
@@ -97,17 +102,22 @@ h2{
     background: #17384B;
     box-shadow: #17384B;
     font-family: 'Poppins', sans-serif;
+    color: #D5D7D8; ;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
 
 }
-h3{
-    position: absolute;
-    top: 55vh;
-    left: 30vw;
+/* h3{
+    margin: auto;
     font: 2em ;
     color: #D5D7D8;
     z-index: 2;
 
-}
+} */
 .goal-item {
     color: white;
     padding: 12px;
@@ -116,6 +126,105 @@ h3{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: solid  #17384B ;
+    
 }
 
+.deleteButton{
+   
+    padding: 5px;
+    
+  
+    background-color: #17384B ;
+    border:none;
 
+}
+
+.deleteButton img{
+    height:30px;
+}
+
+.plusButton{
+    background-color: green;
+    border: none;
+    color: white;
+    width: 3%;
+    height: 1% ;
+    margin-right: -8vw;
+    border-radius: 50%;
+    margin-left: -3vw;
+    font-size: 20px;
+    text-align: center;
+}
+
+.minusButton{
+    background-color: red;
+    border: none;
+    color: white;
+    width: 3%;
+    height: 1% ;
+    
+    border-radius: 50%;
+    margin-left:-10vw;
+    font-size: 20px;
+    text-align: center;
+}
+
+.incrementInput{
+    width: 5vw;
+    height: 5vh;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    margin-left: -2vw;
+}
+
+.goalsList{
+    
+    height: 80%;
+    margin-top: 5vh;
+    overflow: scroll;
+    width: 100%;
+}
+
+.progressBar{
+    height:20px;
+    width: 40vw;
+    background-color: white;
+    
+    left:22vw;
+    border-radius: 50px;;
+
+
+
+}   
+
+.progressBarFill{
+    height: 100%;
+    background-color: #0CD1A5;
+    border-radius: 50px;
+}
+
+.smallGoalsInfo{
+    width: 321px;
+    height: 87px;
+    background-color:#D5D7D8;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 5vh;
+    /* align-items: center;
+    justify-content: center; */
+
+}
+
+.smallGoalsInfo p{
+color: #17384B;
+
+margin-top: 10px;
+font-family: 'Poppins', sans-serif;
+font-size: 40px;
+font-weight: 600;
+
+
+}
