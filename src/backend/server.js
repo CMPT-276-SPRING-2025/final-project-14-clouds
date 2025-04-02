@@ -15,6 +15,7 @@ app.use(cors({
 const PORT = process.env.PORT || 5000;
 const CLIENT_ID = process.env.CLIENT_ID;
 const SECRET_PLAID_KEY = process.env.SECRET_PLAID_KEY;
+const GEMINI_KEY = process.env.GEMINI_API_KEY;
 
 //Utility function for API requests
 async function fetchFromPlaid(url, body) {
@@ -101,6 +102,36 @@ let accessToken;
     }
 })();
 
+
+//Testing Gemini API response
+async function geminiResponse(){
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`,{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            contents:[
+                {
+                    parts:[
+                        {
+                            text:  "What is the purpose of life. Answer in 5 sentences"
+                        }
+                    ]
+                }
+            ]
+        })
+    }     
+    );
+
+     
+    return response;
+}
+
+
+
+
+
 //Route: Get Account Balances
 app.get("/getBalance", async (req, res) => {
     if (!accessToken) return res.status(500).json({ error: "Access token not initialized" });
@@ -140,6 +171,15 @@ app.get("/getTransactions", async (req, res) => {
 
     res.json({ transactions: transactionsData.transactions });
 });
+
+//Route: Test Gemini API Route
+app.get("/getAnswer", async (req,res) =>{
+    const data = await geminiResponse();
+    const json = await data.json();
+    res.json({
+        answer: json
+    });
+})
 
 //Route: Test Endpoint
 app.get("/test", (req, res) => {
