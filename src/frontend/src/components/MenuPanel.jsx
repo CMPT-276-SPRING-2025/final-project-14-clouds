@@ -14,7 +14,7 @@ function MenuPanel() {
       </div>
       <nav className="menu">
         <ul>
-          <li><Link to="/Dashboard">Dashboard</Link></li>
+          <li><Link to="/Dashboard">Agrim</Link></li>
           <li><Link to="/AccountActivity">Account Activity</Link></li>
           <li><Link to="/Goals">My Goals</Link></li>
           <li><Link to="/Analytics">Analytics</Link></li>
