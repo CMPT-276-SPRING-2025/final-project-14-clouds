@@ -9,15 +9,19 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 
 function App() {
+  const [goals, setGoals] = useState([]);
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/AccountActivity" element={<AccountActivity />}></Route>
+        <Route path="/AccountActivity" element={<AccountActivity goals={goals} />}></Route>
         <Route path="/Advice" element={<Advice />}></Route>
         <Route path="/Analytics" element={<Analytics />}></Route>
         <Route path="/Dashboard" element={<Dashboard />}></Route>
-        <Route path="/Goals" element={<Goals />}></Route>
+        <Route
+          path="/Goals"
+          element={<Goals goals={goals} setGoals={setGoals} />}
+        ></Route>
         <Route path="/Login" element={<Login />}></Route>
       </Routes>
     </BrowserRouter>

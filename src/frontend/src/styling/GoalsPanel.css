@@ -1,0 +1,38 @@
+.goals-small{
+    top: 15vh;
+    left: 25vw;
+    width:25vw;
+    height: 28vh;
+    border-radius: 20px;
+    background: #17384B;
+    box-shadow: #17384B;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.smallGoals{
+    width: 321px;
+    height: 87px;
+    background-color:#D5D7D8;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 5vh;
+    /* align-items: center;
+    justify-content: center; */
+
+}
+
+.smallGoals p{
+color: #17384B;
+
+margin-top: 10px;
+font-family: 'Poppins', sans-serif;
+font-size: 40px;
+font-weight: 600;
+
+
+}

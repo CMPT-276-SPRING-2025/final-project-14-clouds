@@ -45,7 +45,7 @@
     align-items: flex-end;
     flex-wrap: wrap;
     flex-direction: column; 
-    gap: 5.6rem;
+    gap: 1rem;
     display: flex;
   }
   @media (max-width: 900px) {

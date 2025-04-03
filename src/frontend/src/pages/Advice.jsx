@@ -1,5 +1,11 @@
+
 import "../styling/Advice.css";
 import { useState, useRef, useEffect } from "react";
+
+import "../styling/menu.css";
+import { Link } from "react-router-dom";
+import Logo from "../styling/Removal-906.png";
+
 import MenuPanel from "../components/MenuPanel";
 
 function Advice() {
@@ -72,6 +78,5 @@ function Advice() {
       </div>
     </div>
   );
-}
 
 export default Advice;
