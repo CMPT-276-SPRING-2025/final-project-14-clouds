@@ -1,4 +1,3 @@
-
 import "../styling/Advice.css";
 import { useState, useRef, useEffect } from "react";
 
@@ -10,8 +9,8 @@ import MenuPanel from "../components/MenuPanel";
 
 function Advice() {
   const [chatLog, setChatLog] = useState([]);
-  const [input, setInput] = useState("");     
-  const chatEndRef = useRef(null);            
+  const [input, setInput] = useState("");
+  const chatEndRef = useRef(null);
 
   const handleSubmit = () => {
     if (input.trim() === "") return;
@@ -41,7 +40,9 @@ function Advice() {
               {chatLog.map((entry, index) => (
                 <div key={index}>
                   <div className="message-row left">
-                    <div className="dynamic-box question-box">{entry.question}</div>
+                    <div className="dynamic-box question-box">
+                      {entry.question}
+                    </div>
                   </div>
 
                   <div className="message-row right">
@@ -78,5 +79,6 @@ function Advice() {
       </div>
     </div>
   );
+}
 
 export default Advice;
