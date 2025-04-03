@@ -104,7 +104,7 @@ let accessToken;
 
 
 //Testing Gemini API response
-async function geminiResponse(){
+async function geminiResponse(question){
     const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`,{
         method: "POST",
         headers:{
@@ -115,7 +115,7 @@ async function geminiResponse(){
                 {
                     parts:[
                         {
-                            text:  "What is the purpose of life. Answer in 5 sentences"
+                            text:  question
                         }
                     ]
                 }
@@ -173,13 +173,26 @@ app.get("/getTransactions", async (req, res) => {
 });
 
 //Route: Test Gemini API Route
-app.get("/getAnswer", async (req,res) =>{
-    const data = await geminiResponse();
-    const json = await data.json();
-    res.json({
-        answer: json
-    });
-})
+app.post("/getAnswer", async (req,res) =>{
+
+    try{
+        const question = req.body.question; 
+        const data = await geminiResponse(question);
+        const json = await data.json();
+        res.json({
+            answer: json.candidates[0].content.parts[0].text
+
+        })
+    }
+
+    catch(error){
+        console.log(error);
+        res.json({
+            error: "Error failed to fetch answer from Gemini"
+        })
+    }
+    
+});
 
 //Route: Test Endpoint
 app.get("/test", (req, res) => {
