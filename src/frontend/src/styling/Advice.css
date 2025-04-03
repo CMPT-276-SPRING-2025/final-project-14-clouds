@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.advice-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: #33586E;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  padding-bottom: 90px;
+}
+
+.advice-content-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1;
+  margin-left: 280px;
+  gap: 2rem;
+  padding-top: 12vh;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 40px;
+}
+
+.right-column {
+  width: 35%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.chat-panel {
+  background-color: #2d4f60;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 70vh;
+  max-height: 70vh;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.chat-messages {
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #0d2a3a;
+  border-radius: 8px;
+}
+
+.message-row {
+  display: flex;
+  width: 100%;
+}
+
+.message-row.left {
+  justify-content: flex-start;
+}
+
+.message-row.right {
+  justify-content: flex-end;
+}
+
+.dynamic-box {
+  max-width: 60%;
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  word-wrap: break-word;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.question-box {
+  background-color: #0d2a3a;
+  color: #ffffff;
+}
+
+.answer-box {
+  background-color: #bdbcbc;
+  color: #17384B;
+}
+
+.faq-box {
+  background-color: #cccaca;
+  color: #17384B;
+  padding: 20px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  line-height: 1.6;
+  width: 100%;
+  height: fit-content;
+}
+
+.faq-box h2 {
+  color: #17384B;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+}
+
+.chat-input-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 280px;
+  width: calc(100% - 280px);
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+  background: transparent;
+  padding: 0;
+}
+
+.chat-input-panel {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+}
+
+.chat-submit {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #0d2a3a;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  height: 100%;
+}
+
+.chat-submit:hover {
+  background-color: #0a1e2a;
+}
+
+@media (max-width: 900px) {
+  .advice-content-container {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .chat-input-wrapper {
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .chat-input-panel {
+    width: 100%;
+  }
+}
