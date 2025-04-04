@@ -7,7 +7,7 @@ app.use(express.json());
 
 //Allow frontend requests
 app.use(cors({
-    origin: ["https://final-project-14-clouds-1.onrender.com","http://localhost:5173"],
+    origin: "https://final-project-14-clouds-1.onrender.com",
     methods: "GET,POST",
     credentials: true,
 }));

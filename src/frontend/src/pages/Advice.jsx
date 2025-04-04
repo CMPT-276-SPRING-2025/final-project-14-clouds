@@ -17,7 +17,7 @@ function Advice() {
     if (input.trim() === "") return;
 
     // Append a new chat entry to the log
-    const res = await fetch("http://localhost:4000/getAnswer", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/getAnswer`, {
       method: "Post",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +27,7 @@ function Advice() {
       }),
     });
 
-    const res2 = await fetch("http://localhost:4000/getAnswer", {
+    const res2 = await fetch(`${import.meta.env.VITE_API_URL}/getAnswer`, {
       method: "Post",
       headers: {
         "Content-Type": "application/json",
