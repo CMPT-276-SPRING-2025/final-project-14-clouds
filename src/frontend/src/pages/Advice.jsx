@@ -11,6 +11,7 @@ function Advice() {
   const [chatLog, setChatLog] = useState([]);
   const [input, setInput] = useState("");
   const chatEndRef = useRef(null);
+  const [resources, setResources] = useState("");
 
   const handleSubmit = async () => {
     if (input.trim() === "") return;
@@ -26,10 +27,33 @@ function Advice() {
       }),
     });
 
+    const res2 = await fetch("http://localhost:4000/getAnswer", {
+      method: "Post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        question: `${input}
+
+Respond ONLY with 2 sources in this exact format. Do not include any explanation, summary, or additional commentary.
+
+• Title: [Title]
+  URL: [URL]
+
+• Title: [Title]
+  URL: [URL]`,
+      }),
+    });
+
     const data = await res.json();
     const answer = data.answer;
+
+    const data2 = await res2.json();
+    const source = data2.answer;
+
     setChatLog([...chatLog, { question: input, answer: answer }]);
     setInput("");
+    setResources(source);
   };
 
   // accept 'enter' key to submit input
@@ -69,7 +93,13 @@ function Advice() {
 
         <div className="right-column">
           <div className="faq-box">
-            <p>TODO: Hook up FAQ response content here once API is ready.</p>
+            <h2>Resources</h2>
+            {resources
+              .split("•") // split the bullet points
+              .filter((item) => item.trim() !== "") // remove empty strings
+              .map((item, index) => (
+                <p key={index}>• {item.trim()}</p>
+              ))}
           </div>
         </div>
       </div>
