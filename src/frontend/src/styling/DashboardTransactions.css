@@ -7,10 +7,10 @@
     border-radius: 20px;
     width: 100%;
     max-width: 100%;
-    height: 45vh;
-    max-height: 100%;
+    height: 45vh; /* Fixed height for panel */
     box-shadow: #17384B;
     font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Prevent overflow in parent */
 }
 
 h2 {
@@ -103,18 +103,19 @@ th, td {
     text-align: center;
     font-style: italic;
 }
+
+/* Table container with max height and overflow */
 .dtransactions-table-container {
-    max-height: 627px; /* or any height you prefer */
-    overflow-y: auto;
+    max-height: 627px; /* Define max height for the table container */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
     margin-top: 10px;
     border-top: 1px solid #D5D7D8;
-  }
-  
-  /* Optional: Make table rows sticky headers for better UX */
-  .dtransactions-table thead th {
+}
+
+/* Optional: Make table rows sticky headers for better UX */
+.dtransactions-table thead th {
     position: sticky;
     top: 0;
     background-color: #17384B;
     z-index: 1;
-  }
-  
+}
