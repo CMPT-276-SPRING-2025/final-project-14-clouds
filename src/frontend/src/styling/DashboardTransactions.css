@@ -48,7 +48,7 @@ h2 {
 }
 
 /* Transactions Table */
-.transactions-table {
+.dtransactions-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
@@ -103,7 +103,7 @@ th, td {
     text-align: center;
     font-style: italic;
 }
-.transactions-table-container {
+.dtransactions-table-container {
     max-height: 627px; /* or any height you prefer */
     overflow-y: auto;
     margin-top: 10px;
@@ -111,7 +111,7 @@ th, td {
   }
   
   /* Optional: Make table rows sticky headers for better UX */
-  .transactions-table thead th {
+  .dtransactions-table thead th {
     position: sticky;
     top: 0;
     background-color: #17384B;
