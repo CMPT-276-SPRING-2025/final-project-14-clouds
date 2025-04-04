@@ -75,10 +75,12 @@
 
 .message-row.left {
   justify-content: flex-start;
+  margin-top: 3vh;
 }
 
 .message-row.right {
   justify-content: flex-end;
+  margin-top: 3vh;
 }
 
 .dynamic-box {

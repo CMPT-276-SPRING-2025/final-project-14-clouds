@@ -12,11 +12,23 @@ function Advice() {
   const [input, setInput] = useState("");
   const chatEndRef = useRef(null);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (input.trim() === "") return;
 
     // Append a new chat entry to the log
-    setChatLog([...chatLog, { question: input, answer: "thinking..." }]);
+    const res = await fetch("http://localhost:4000/getAnswer", {
+      method: "Post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        question: input,
+      }),
+    });
+
+    const data = await res.json();
+    const answer = data.answer;
+    setChatLog([...chatLog, { question: input, answer: answer }]);
     setInput("");
   };
 

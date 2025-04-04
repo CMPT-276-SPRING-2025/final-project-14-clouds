@@ -7,7 +7,7 @@ app.use(express.json());
 
 //Allow frontend requests
 app.use(cors({
-    origin: "https://final-project-14-clouds-1.onrender.com",
+    origin: ["https://final-project-14-clouds-1.onrender.com","http://localhost:5173"],
     methods: "GET,POST",
     credentials: true,
 }));
@@ -105,6 +105,9 @@ let accessToken;
 
 //Testing Gemini API response
 async function geminiResponse(question){
+
+
+
     const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`,{
         method: "POST",
         headers:{
@@ -115,7 +118,7 @@ async function geminiResponse(question){
                 {
                     parts:[
                         {
-                            text:  question
+                            text:  question + ". please answer this in no more than 3 sentences" + "Here are"
                         }
                     ]
                 }
@@ -176,6 +179,8 @@ app.get("/getTransactions", async (req, res) => {
 app.post("/getAnswer", async (req,res) =>{
 
     try{
+        
+
         const question = req.body.question; 
         const data = await geminiResponse(question);
         const json = await data.json();
