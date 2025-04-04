@@ -1,5 +1,6 @@
 import "../styling/DashboardTransactions.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function DashboardTransactions() {
   const [transactions, setTransactions] = useState([]);
@@ -30,7 +31,7 @@ function DashboardTransactions() {
   }, []);
 
   // Get the latest 4 transactions
-  const recentTransactions = transactions.slice(0, 4); // Taking the first 4 transactions
+  const recentTransactions = transactions.slice(0, 5); 
 
   return (
     <div className="dashboard-transactions-panel">
