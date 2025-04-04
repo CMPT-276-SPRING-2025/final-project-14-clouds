@@ -61,8 +61,8 @@ function DashboardTransactions() {
 
       {/* Show Transactions Table */}
       {!loading && !error && recentTransactions.length > 0 && (
-        <div className="transactions-table-container">
-          <table className="transactions-table">
+        <div className="dtransactions-table-container">
+          <table className="dtransactions-table">
             <thead>
               <tr>
                 <th>Merchant</th>
