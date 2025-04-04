@@ -17,7 +17,7 @@ function App() {
         <Route path="/AccountActivity" element={<AccountActivity goals={goals} />}></Route>
         <Route path="/Advice" element={<Advice />}></Route>
         <Route path="/Analytics" element={<Analytics />}></Route>
-        <Route path="/Dashboard" element={<Dashboard />}></Route>
+        <Route path="/Dashboard" element={<Dashboard goals={goals} />}></Route>
         <Route
           path="/Goals"
           element={<Goals goals={goals} setGoals={setGoals} />}

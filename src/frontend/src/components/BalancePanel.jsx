@@ -1,4 +1,4 @@
-import "../styling/BalancePanel.css";
+import "../styling/BalancePanelDashboard.css";
 import { useEffect, useState } from "react";
 
 function BalancePanel() {
