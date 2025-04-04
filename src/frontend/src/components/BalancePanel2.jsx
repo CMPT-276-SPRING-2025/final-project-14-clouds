@@ -31,14 +31,14 @@ function BalancePanel2() {
 
   if (loading) {
     return (
-      <div className="panel">
+      <div className="panel-container">
         <p className="loading-text">Loading...</p>
       </div>
     );
   }
 
   return (
-    <div className="panel">
+    <div className="panel-container">
       <h2 className="balance-title">Your Balance</h2>
       <hr className="divider" />
 

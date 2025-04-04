@@ -5,8 +5,9 @@
     border: solid #17384B;
     background-color: #17384B;
     border-radius: 20px;
-    width: 362px ;
-    height: 350px;
+    width: 43vh ;
+    max-width: 50%;
+    height: 35vh;
     color: white;
     font-family: 'Poppins', sans-serif;
     transition: transform 0.3s ease-in-out;

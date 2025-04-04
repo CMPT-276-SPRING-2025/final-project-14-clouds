@@ -43,7 +43,7 @@ function TransactionsPanel() {
   }, [filter, transactions]);
 
   return (
-    <div className="panel transactions-panel">
+    <div className="transactions-panel">
       <div className="transactions-header">
         <h2>Account Activity</h2>
         <select className="filter-dropdown" value={filter} onChange={(e) => setFilter(e.target.value)}>

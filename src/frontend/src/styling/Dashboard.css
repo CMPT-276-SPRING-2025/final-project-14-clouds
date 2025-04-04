@@ -1,0 +1,150 @@
+.Dashboard-page {
+    display: flex;
+    min-height: 100vh;
+    margin-top: 5%;
+    background-color: #33586E;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle closest-side at 80% 50%, #6dc9b6, #33586E); /* Radial gradient background */
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #17384B;
+    padding: 1.5rem;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.dashboard-content-container {
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+    flex: 1;
+    margin-left: 300px; /* Adjust space for sidebar */
+    margin-right: 2%; /* Adjust space for the right */
+    flex-wrap: wrap; /* Allows items to wrap */
+    max-width: calc(100% - 300px); /* Adjust width based on sidebar */
+}
+
+/* Left content: "Loading", "Your Goals", etc. */
+.dashboard-content {
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    flex: 1; /* Take up remaining space */
+    min-width: 300px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* Right content: Placeholder panels */
+.dashboard-content1 {
+    margin-top: 2.5%;
+    flex: 0 0 22%; /* Set the right side panel width */
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-start;
+}
+
+/* Placeholder panels styling */
+.placeholder-panel {
+    background-color: #17384B; /* Same as other panels */
+    padding: 2rem;
+    border-radius: 15px;
+    width: 100%;
+    height: 35vh;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+.placeholder-panel2 {
+    background: linear-gradient(145deg, #25292b, #17384B); /* Subtle gradient for a cooler effect */
+    padding: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 100%;
+    height: 45vh;
+    max-height: 100%;
+    margin-bottom: 1.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Ensure text and button are centered */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for a modern look */
+}
+
+.placeholder-panel2 h3 {
+    font-size: 1.5rem; /* Bigger font for the heading */
+    font-weight: 600; /* Bold text */
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: uppercase; /* For a modern touch */
+    letter-spacing: 1px; /* Spacing between letters for cleaner look */
+}
+
+.placeholder-panel2 p {
+    font-size: 1rem;
+    font-weight: 300; /* Lighter font weight for the description */
+    color: #D5D7D8; /* Lighter gray color for contrast */
+    margin-bottom: 1.5rem;
+    line-height: 1.6; /* Line height for readability */
+}
+
+/* Button Styling */
+.placeholder-panel2 button {
+    background-color: #0CD1A5;  /* Vibrant button color */
+    color: #17384B;
+    padding: 25px 24px;
+    border: none;
+    border-radius: 5px; /* Rounded button for a modern look */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+.placeholder-panel2 button:hover {
+    background-color: #07a87f;  /* Slightly darker shade for hover */
+    transform: scale(1.05); /* Button grow effect on hover */
+    color: #D5D7D8;
+}
+
+.placeholder-panel2 button:active {
+    transform: scale(1); /* Return to original size when clicked */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 900px) {
+    .dashboard-content-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .dashboard-content,
+    .dashboard-content1 {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .dashboard-content {
+        flex-direction: column; /* Stack on small screens */
+        gap: 1rem;
+    }
+
+    .dashboard-content1 {
+        flex: 1 1 100%; /* Make it full width on small screens */
+        padding-top: 0;
+        margin-top: 2rem;
+    }
+
+    .dashboard-content-container {
+        margin-right: 0;
+    }
+}
