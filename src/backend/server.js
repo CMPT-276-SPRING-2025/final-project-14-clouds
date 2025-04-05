@@ -11,6 +11,7 @@ app.use(cors({
     methods: "GET,POST",
     credentials: true,
 }));
+// before pushing change the origin so it's just render.com
 
 const PORT = process.env.PORT || 5000;
 const CLIENT_ID = process.env.CLIENT_ID;
