@@ -1,5 +1,5 @@
 import "../styling/Login.css";
-import Plaid from "../styling/plaid.jpg";
+// import Plaid from "../styling/plaid.jpg";
 import P2 from "../styling/p2.png";
 import LoginPanel from "../components/loginPanel";
 import { useState, useEffect } from "react";

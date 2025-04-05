@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../styling/Login.css";
 import X from "../assets/letter-x.png";
 import { useNavigate } from "react-router-dom";
