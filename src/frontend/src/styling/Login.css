@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;  
     justify-content: center; 
-    top: 65vh;
+    top: 60vh;
     left: 27vw;
     background: #0CD1A5;
     color: #010203;
@@ -65,4 +65,42 @@
     border-radius: 50%;
     background: transparent; /* Makes the center invisible */
     box-shadow: 0 0 5vw 5vw rgba(192, 222, 239, 0.7); /* Gradient shadow effect */
+}
+
+.loginPanel{
+  border: 2px solid  #D7D8D2 ;
+  position: absolute;
+  width: 30%;     
+  height: 60%;    
+  top: 19vh;        
+  left: 55vw;       
+  background-color: #17384B; 
+  z-index: 10;      
+  padding: 20px;   
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  color: #D7D8D2; 
+  border-radius: 20px;
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+  
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.inputs input{
+  border-radius: 20px;
+  border: none;
+  padding: 20px;
+}
+
+.formButton{
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  background-color: white;
+  color: #17384B;
+
 }
