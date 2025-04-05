@@ -7,7 +7,7 @@ import Logo from "../styling/Removal-906.png";
 
 import MenuPanel from "../components/MenuPanel";
 
-function Advice() {
+function Advice({ goals, setGoals }) {
   const [chatLog, setChatLog] = useState([]);
   const [input, setInput] = useState("");
   const chatEndRef = useRef(null);
@@ -67,7 +67,7 @@ Respond ONLY with 2 sources in this exact format. Do not include any explanation
 
   return (
     <div className="advice-page">
-      <MenuPanel />
+      <MenuPanel setter={setGoals} />
 
       <div className="advice-content-container">
         <div className="left-column">

@@ -14,10 +14,22 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/AccountActivity" element={<AccountActivity goals={goals} />}></Route>
-        <Route path="/Advice" element={<Advice />}></Route>
-        <Route path="/Analytics" element={<Analytics />}></Route>
-        <Route path="/Dashboard" element={<Dashboard goals={goals} />}></Route>
+        <Route
+          path="/AccountActivity"
+          element={<AccountActivity goals={goals} setGoals={setGoals} />}
+        ></Route>
+        <Route
+          path="/Advice"
+          element={<Advice goals={goals} setGoals={setGoals} />}
+        ></Route>
+        <Route
+          path="/Analytics"
+          element={<Analytics goals={goals} setGoals={setGoals} />}
+        ></Route>
+        <Route
+          path="/Dashboard"
+          element={<Dashboard goals={goals} setGoals={setGoals} />}
+        ></Route>
         <Route
           path="/Goals"
           element={<Goals goals={goals} setGoals={setGoals} />}
