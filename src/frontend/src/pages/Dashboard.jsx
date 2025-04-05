@@ -6,12 +6,12 @@ import DashboardTransactions from "../components/DashboardTransactions";
 import DashboardGoals from "../components/DashboardGoals";
 import { Link } from "react-router-dom";
 
-function AccountActivity({ goals }) {
+function AccountActivity({ goals, setGoals }) {
   useEffect(() => console.log(goals), [goals]);
 
   return (
     <div className="Dashboard-page">
-      <MenuPanel />
+      <MenuPanel setter={setGoals} />
       <div className="dashboard-content-container">
         {/* Left content */}
         <div className="dashboard-content">
@@ -29,7 +29,9 @@ function AccountActivity({ goals }) {
           <div className="placeholder-panel2">
             <h3>Need some advice?</h3>
             <p>Click here and let's help you out!</p>
-            <Link to="/Advice"><button>Ask for Advice</button></Link>
+            <Link to="/Advice">
+              <button>Ask for Advice</button>
+            </Link>
           </div>
         </div>
       </div>
