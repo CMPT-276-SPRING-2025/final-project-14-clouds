@@ -86,21 +86,28 @@ async function genTransactions(accessToken) {
 }
 
 //Initialize API tokens
-let accessToken;
-(async function initializeTokens() {
-    try {
-        const publicData = await genPublicToken();
-        if (!publicData?.public_token) throw new Error("Failed to generate public token");
+export let accessToken;
 
-        const accessData = await genAccessToken(publicData.public_token);
-        if (!accessData?.access_token) throw new Error("Failed to generate access token");
+export function setAccessToken(token) {
+    accessToken = token;
+}
 
-        accessToken = accessData.access_token;
-        console.log("Access token initialized successfully");
-    } catch (error) {
-        console.error("Token Initialization Failed:", error);
-    }
-})();
+if (process.env.NODE_ENV !== "test") {
+    (async function initializeTokens() {
+        try {
+            const publicData = await genPublicToken();
+            if (!publicData?.public_token) throw new Error("Failed to generate public token");
+
+            const accessData = await genAccessToken(publicData.public_token);
+            if (!accessData?.access_token) throw new Error("Failed to generate access token");
+
+            accessToken = accessData.access_token;
+            console.log("Access token initialized successfully");
+        } catch (error) {
+            console.error("Token Initialization Failed:", error);
+        }
+    })();
+}
 
 
 //Testing Gemini API response
@@ -199,12 +206,22 @@ app.post("/getAnswer", async (req,res) =>{
     
 });
 
-//Route: Test Endpoint
-app.get("/test", (req, res) => {
-    res.json({ name: "Harry", age: 65, nationality: "British" });
-});
 
-// Start Server
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+// Only start server if not in test mode
+if (process.env.NODE_ENV !== "test") {
+    app.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${PORT}`);
+    });
+}
+
+// Export app and utility functions for testing
+export default app;
+
+export {
+    fetchFromPlaid,
+    genPublicToken,
+    genAccessToken,
+    genBalance,
+    genTransactions,
+    geminiResponse
+};
