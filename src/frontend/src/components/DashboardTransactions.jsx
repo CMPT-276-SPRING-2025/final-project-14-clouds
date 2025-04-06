@@ -1,6 +1,7 @@
+import React from "react";
 import "../styling/DashboardTransactions.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
 
 function DashboardTransactions() {
   const [transactions, setTransactions] = useState([]);

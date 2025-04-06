@@ -1,3 +1,4 @@
+import React from "react";
 import "../styling/OverviewPanel.css";
 import { useEffect, useState } from "react";
 
