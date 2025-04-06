@@ -30,7 +30,6 @@ function MonthSelector({ month, year, onPrev, onNext }) {
 }
 
 function Analytics() {
-  // Transaction data and UI state
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -38,7 +37,6 @@ function Analytics() {
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth() + 1);
 
-  // Defined categories for filtering
   const categories = [
     "ALL",
     "TRAVEL",
@@ -52,7 +50,6 @@ function Analytics() {
     "INCOME"
   ];
 
-  // Fetch transaction data once on component mount
   useEffect(() => {
     async function fetchData() {
       try {
@@ -69,35 +66,27 @@ function Analytics() {
     fetchData();
   }, []);
 
-  // Filter by category if not ALL
   const selectedCategory = categories[categoryIndex];
   const filteredByCategory = selectedCategory === "ALL"
     ? transactions
     : transactions.filter(tx => tx.personal_finance_category?.primary === selectedCategory);
 
-  // Filter transactions to only include selected month/year
   const filteredByMonth = filteredByCategory.filter(tx => {
     const date = new Date(tx.date);
     return date.getFullYear() === year && date.getMonth() + 1 === month;
   });
 
-  // Compute total amount for current filter
   const total = filteredByMonth.reduce((sum, tx) => sum + tx.amount, 0);
-
-  // Show all recent transactions
   const recentTransactions = filteredByMonth;
 
-  // Go to previous category in list
   const handlePrevCategory = () => {
     setCategoryIndex((prev) => (prev - 1 + categories.length) % categories.length);
   };
 
-  // Go to next category in list
   const handleNextCategory = () => {
     setCategoryIndex((prev) => (prev + 1) % categories.length);
   };
 
-  // Decrement month, and year if necessary
   const handlePrevMonth = () => {
     setMonth(prev => {
       if (prev === 1) {
@@ -108,7 +97,6 @@ function Analytics() {
     });
   };
 
-  // Increment month, and year if necessary
   const handleNextMonth = () => {
     setMonth(prev => {
       if (prev === 12) {

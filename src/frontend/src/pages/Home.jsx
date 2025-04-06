@@ -8,7 +8,7 @@ function Home() {
       <div className="welcome">
         <div className="glowing-circle"></div>
 
-        <Link to="/Dashboard">
+        <Link to="/Login">
           <div className="start-button">Get started now</div>
         </Link>
 

@@ -13,7 +13,7 @@ const Goals = ({ goals, setGoals }) => {
 
   return (
     <>
-      <MenuPanel />
+      <MenuPanel setter={setGoals} />
 
       <SmallGoals goalsArray={goals} />
       <BigGoals goalsArray={goals} setterFunction={setGoals} />

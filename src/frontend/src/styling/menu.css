@@ -83,3 +83,22 @@
     display: block;
     font-family: 'Poppins', sans-serif;
 }
+
+.logout {
+    left: 2vw;
+    position: absolute;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 20px;
+    border: none;
+    background-color:#D5D7D8;
+    color: #17384B;
+    bottom:15vh;
+    width: 80%;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.logout:hover{ 
+    opacity: 80%;
+}
