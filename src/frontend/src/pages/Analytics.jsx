@@ -1,6 +1,13 @@
 import "../styling/Analytics.css";
+import "../styling/piechart.css";
+import MyComponent from "../components/piechart"; 
 import MenuPanel from "../components/MenuPanel";
 import { useEffect, useState } from "react";
+
+
+
+<MyComponent numerator={75} denominator={100} /> 
+ 
 
 // Category selection panel with arrow buttons
 function CategorySelector({ categories, currentIndex, onPrev, onNext }) {

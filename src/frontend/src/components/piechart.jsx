@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PieChart from './chartcomponent';
+import '../styling/piechart.css';  
 
 const MyComponent = ({ numerator, denominator }) => {
   const [progress, setProgress] = useState(0);
