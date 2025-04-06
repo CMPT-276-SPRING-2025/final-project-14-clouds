@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import PieChart from './chartcomponent';
 
-const MyComponent = () => {
-  const [progress, setProgress] = useState(50); //highlighted width
+const MyComponent = ({ numerator, denominator }) => {
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // updating the progress over time
-    const interval = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress < 100 ? prevProgress + 5 : 0));
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+    if (denominator !== 0) {
+      const percentage = (numerator / denominator) * 100;
+      setProgress(percentage);
+    } else {
+      setProgress(0); // no division by zero
+    }
+  }, [numerator, denominator]);
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './piechart.css';
+import '../stylings/piechart.css'; 
 
 const PieChart = ({ highlightedWidth }) => {
   const strokeWidth = 20; // overall thickness
