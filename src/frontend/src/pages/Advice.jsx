@@ -1,5 +1,6 @@
 import "../styling/Advice.css";
 import { useState, useRef, useEffect } from "react";
+import React from "react";
 
 import "../styling/menu.css";
 import { Link } from "react-router-dom";
