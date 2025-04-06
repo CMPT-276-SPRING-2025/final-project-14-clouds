@@ -1,3 +1,4 @@
+import React from "react";
 import "../../styling/transactionPanel.css";
 import { useEffect, useState } from "react";
 
