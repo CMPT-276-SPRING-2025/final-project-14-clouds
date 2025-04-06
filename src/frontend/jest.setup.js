@@ -1,3 +1,5 @@
 import '@testing-library/jest-dom';
-import { TextEncoder } from 'util';
-global.TextEncoder = TextEncoder;
+
+// jest.setup.js
+global.TextEncoder = require('util').TextEncoder;
+global.TextDecoder = require('util').TextDecoder;

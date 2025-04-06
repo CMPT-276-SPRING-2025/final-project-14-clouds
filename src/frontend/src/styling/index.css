@@ -38,7 +38,7 @@
   .glowing-circle {
     position: absolute;
     top: 30vh;
-    left: 70vw;
+    left: 40vw;
     width: 20vw; /* Controls the size of the shadow */
     height: 20vw; /* Make width and height equal */
     border-radius: 50%;

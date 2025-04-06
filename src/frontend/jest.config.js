@@ -1,4 +1,6 @@
+
 export default {
+  moduleDirectories: ['node_modules', 'src'],
   // Setup files to be run before tests
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
 
@@ -15,5 +17,7 @@ export default {
   // Babel transformer for JSX and JS files
   transform: {
     "^.+\\.[t|j]sx?$": "babel-jest",
+     '^.+\\.css$': 'jest-transform-stub', // Mock CSS imports
   },
 };
+

@@ -36,6 +36,7 @@ const AddGoal = ({ onAddGoal }) => {
       <input
         type="date"
         name="achieve-by"
+        placeholder="Achieve By" 
         value={date}
         onChange={(e) => setDate(e.target.value)}
       />

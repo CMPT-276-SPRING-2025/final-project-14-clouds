@@ -1,0 +1,222 @@
+.analytics-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8vh 2vw;
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 350px;
+    margin-left: 100px;
+}  
+
+.analytics-transactions-panel {
+    background: #17384B;
+    padding: 20px;
+    color: #D5D7D8;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 900px;
+    min-width: 300px;
+    height: 400px;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.dtransactions-table-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-top: 10px;
+    border-top: 1px solid #D5D7D8;
+}
+
+.transactions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.dtransactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.dtransactions-table th,
+.dtransactions-table td {
+    padding: 10px;
+    border-bottom: 1px solid #81929d;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.negative {
+    color: #EC151D;
+}
+
+.positive {
+    color: #0CD1A5;
+}
+
+.loading-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 4px solid #0CD1A5;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-container {
+    background: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.no-transactions {
+    text-align: center;
+    font-style: italic;
+}
+
+.dtransactions-table-container {
+    max-height: 35vh;
+    overflow-y: auto;
+    margin-top: 10px;
+    border-top: 1px solid #D5D7D8;
+}
+
+.dtransactions-table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #17384B;
+    z-index: 1;
+}
+
+@media (max-width: 600px) {
+    .dtransactions-table th,
+    .dtransactions-table td {
+    font-size: 0.8rem;
+    padding: 8px;
+    }
+
+    .analytics-transactions-panel {
+    padding: 15px;
+    }
+}
+
+.month-selector-box {
+    position: absolute;
+    top: 180px;
+    right: 200px;
+    z-index: 11;
+}
+
+.month-selector-inner {
+    background-color: #00E6C3;
+    border-radius: 12px;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 370px;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.month-label {
+    color: rgb(59, 59, 59);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.category-selector-box {
+    position: absolute;
+    top: 260px;
+    right: 200px;
+    z-index: 10;
+}
+
+.category-selector-inner {
+    background-color: #00E6C3;
+    border-radius: 12px;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 370px;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.category-selector-inner h3 {
+    margin: 0;
+    color: rgb(59, 59, 59);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}  
+
+.arrow-button {
+    background-color: #183e4f;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-button:hover {
+    transform: scale(1.1);
+}
+
+.total-spent-indicator {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: white;
+    text-align: right;
+    width: 100%;
+    max-width: 900px;
+    padding-right: 15px;
+}
+
+.total-spent-indicator .positive {
+    color: #0CD1A5;
+}
+
+.total-spent-indicator .negative {
+    color: #EC151D;
+} 
