@@ -1,6 +1,8 @@
+import React from "react";
 import "../styling/menu.css";
 import { Link } from "react-router-dom";
 import Logo from "../styling/Removal-906.png";
+
 
 function MenuPanel({ setter }) {
   return (
@@ -10,7 +12,7 @@ function MenuPanel({ setter }) {
           <img src={Logo} alt="profile logo" className="logo" />
         </div>
       </div>
-      <nav className="menu">
+      <nav className="menu" data-testid="menu-panel">
         <ul>
           <li>
             <Link to="/Dashboard">Dashboard</Link>

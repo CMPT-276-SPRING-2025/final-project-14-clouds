@@ -1,3 +1,4 @@
+import React from 'react';
 import "../styling/BalancePanelDashboard.css";
 import { useEffect, useState } from "react";
 
@@ -39,9 +40,9 @@ function BalancePanel() {
           alignItems: "center",
           justifyContent: "center",
         }}
-        class="panel"
+        className="panel"
       >
-        <div style={{ marginLeft: "0px" }} class="tbalance">
+        <div style={{ marginLeft: "0px" }} className="tbalance">
           <p style={{ fontSize: "40px", fontWeight: "bold" }}>Loading...</p>
         </div>
       </div>
@@ -49,16 +50,16 @@ function BalancePanel() {
   }
   return (
     <>
-      <div class="panel">
+      <div className="panel">
         <h2> Your Balance</h2>
 
-        <div class="tbalance">
+        <div className="tbalance">
           <p>Total Balance:</p>
           <br></br>
           <p style={{ fontSize: "40px", fontWeight: "bold" }}>${total}</p>
         </div>
 
-        <div class="details">
+        <div className="details">
           <p>Chequing:</p>
           <p
             style={{

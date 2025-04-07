@@ -6,7 +6,7 @@ import DashboardTransactions from "../components/DashboardTransactions";
 import DashboardGoals from "../components/DashboardGoals";
 import { Link } from "react-router-dom";
 
-function AccountActivity({ goals, setGoals }) {
+function Dashboard({ goals, setGoals }) {
   useEffect(() => console.log(goals), [goals]);
 
   return (
@@ -39,4 +39,4 @@ function AccountActivity({ goals, setGoals }) {
   );
 }
 
-export default AccountActivity;
+export default Dashboard;

@@ -1,6 +1,7 @@
 import "../styling/index.css";
 import Logo from "../styling/Removal-906.png";
 import { Link } from "react-router-dom";
+import React from "react";
 //import BalancePanel from "../components/BalancePanel";
 function Home() {
   return (

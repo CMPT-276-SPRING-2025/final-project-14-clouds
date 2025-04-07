@@ -1,0 +1,59 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # Backend testing job
+  backend-test:
+    name: Backend Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'  
+
+      - name: Install dependencies
+        run: |
+          cd src/backend
+          npm install
+
+      - name: Run backend unit tests and integration test
+        run: |
+          cd src/backend
+          npm test
+
+          
+  # Frontend testing job
+  frontend-test:
+    name: Frontend Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'  
+
+      - name: Install dependencies
+        run: |
+          cd src/frontend
+          npm install
+
+      - name: Run frontend unit tests and integration tests
+        run: |
+          cd src/frontend
+          npm test

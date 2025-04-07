@@ -1,6 +1,8 @@
+import React from "react";
 import "../styling/DashboardTransactions.css";
+
+
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 function DashboardTransactions() {
   const [transactions, setTransactions] = useState([]);
@@ -9,7 +11,9 @@ function DashboardTransactions() {
 
   async function connectEndPoint() {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/getTransactions`);
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/getTransactions`
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch transactions");
       }
@@ -31,7 +35,7 @@ function DashboardTransactions() {
   }, []);
 
   // Get the latest 4 transactions
-  const recentTransactions = transactions.slice(0, 5); 
+  const recentTransactions = transactions.slice(0, 5);
 
   return (
     <div className="dashboard-transactions-panel">
