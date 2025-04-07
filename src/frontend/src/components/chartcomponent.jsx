@@ -3,7 +3,7 @@ import '../styling/piechart.css';
 
 const PieChart = ({ highlightedWidth }) => {
   const strokeWidth = 20; // overall thickness
-  const radius = 50;     // size of the circle
+  const radius = 100;     // size of the circle
   const circumference = 2 * Math.PI * radius;
   const offset = circumference * (1 - highlightedWidth / 100); // Calculate the stroke
 

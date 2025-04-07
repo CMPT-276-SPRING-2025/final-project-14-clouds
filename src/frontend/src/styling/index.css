@@ -8,12 +8,16 @@
     box-sizing: border-box;
 }
 
-.welcome{
+.welcome {
+    position: relative; /* Add this line */
     height: 100vh;
+
     background-color: #17384B !important; 
     font-family: 'Poppins', sans-serif; 
    
+
 }
+
 
   h1{
     font-size: 2.5em;
@@ -51,6 +55,7 @@
   box-shadow: 0 0 5vw 5vw rgba(192, 222, 239, 0.7);
   
   
+
 }
 
 .start-button {
