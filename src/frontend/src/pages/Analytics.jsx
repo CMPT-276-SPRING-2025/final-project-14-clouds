@@ -119,18 +119,25 @@ const totalIncome = filteredByMonth
 .filter(tx => tx.amount > 0)
 .reduce((sum, tx) => sum + tx.amount, 0);
 
-// Calculate the total activity (absolute sum of all transactions)
-const totalActivity = filteredByMonth
-.reduce((sum, tx) => sum + Math.abs(tx.amount), 0);
+const totalSpendings = filteredByMonth
+  .filter(tx => tx.amount < 0)
+  .reduce((sum, tx) => sum + Math.abs(tx.amount), 0);
+
+// Calculate net income as income minus spendings
+const netIncome = totalIncome - totalSpendings;
+
+// Ensure we have non-negative values for the pie chart
+const safeNetIncome = netIncome > 0 ? netIncome : 0;
+const safeTotalIncome = totalIncome > 0 ? totalIncome : 1; // No division by zero 
 
 
   return (
     <>
-      <MyComponent numerator={totalIncome} denominator={totalActivity} />
+      <MyComponent numerator={safeNetIncome} denominator={safeTotalIncome} />
       <MenuPanel />
       <div className="analytics-page">
         <MonthSelector
-          month={month}
+          month={month} 
           year={year}
           onPrev={handlePrevMonth}
           onNext={handleNextMonth}
