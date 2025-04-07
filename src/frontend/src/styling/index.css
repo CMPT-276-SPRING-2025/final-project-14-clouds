@@ -12,6 +12,7 @@
     height: 100vh;
     background-color: #17384B !important; 
     font-family: 'Poppins', sans-serif; 
+   
 }
 
   h1{
@@ -34,16 +35,22 @@
     width: 50vw;
     height: 100vh;
     z-index: 1;
+   
   }
-  .glowing-circle {
-    position: absolute;
-    top: 30vh;
-    left: 40vw;
-    width: 20vw; /* Controls the size of the shadow */
-    height: 20vw; /* Make width and height equal */
-    border-radius: 50%;
-    background: transparent; /* Makes the center invisible */
-    box-shadow: 0 0 5vw 5vw rgba(192, 222, 239, 0.7); /* Gradient shadow effect */
+
+
+
+.Glowing-circle {
+  position: absolute;
+  top: 30vh;
+  left: 60vw;
+  width: 20vw; /* Controls the size of the shadow */
+  height: 20vw; /* Make width and height equal */
+  border-radius: 50%;
+  background: transparent; 
+  box-shadow: 0 0 5vw 5vw rgba(192, 222, 239, 0.7);
+  
+  
 }
 
 .start-button {
@@ -61,5 +68,6 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    
     
 }

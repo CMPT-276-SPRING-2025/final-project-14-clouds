@@ -6,9 +6,8 @@ import React from "react";
 function Home() {
   return (
     <>
+      <div className="Glowing-circle"></div>
       <div className="welcome">
-        <div className="glowing-circle"></div>
-
         <Link to="/Login">
           <div className="start-button">Get started now</div>
         </Link>
