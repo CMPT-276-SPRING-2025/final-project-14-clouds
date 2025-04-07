@@ -1,4 +1,5 @@
 .pie-chart-container {
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100;
@@ -8,14 +9,20 @@
 }
 
 .base-circle {
-  fill: #e0e0e0; /* background */
-  stroke: #e0e0e0;
-  z-index: 100;
+  fill: none;
+  stroke: #e0e0e0; /* light grey background */
 }
 
-.highlight-circle {
-  fill: transparent;
-  stroke: #0CD1A5; 
+.income-circle {
+  fill: none;
   stroke-linecap: round;
-  z-index: 100;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.expense-circle {
+  fill: none;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
 }

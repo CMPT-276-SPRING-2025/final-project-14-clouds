@@ -1,15 +1,18 @@
-import React from 'react';
-import '../styling/piechart.css'; 
+import React from "react";
+import "../styling/piechart.css";
 
-const PieChart = ({ highlightedWidth }) => {
-  const strokeWidth = 20; // overall thickness
-  const radius = 100;     // size of the circle
+const PieChart = ({ incomePercentage, expensePercentage }) => {
+  const strokeWidth = 20;
+  const radius = 100;
   const circumference = 2 * Math.PI * radius;
-  const offset = circumference * (1 - highlightedWidth / 100); // Calculate the stroke
+
+  const incomeLength = (incomePercentage / 100) * circumference;
+  const expenseLength = (expensePercentage / 100) * circumference;
 
   return (
     <div className="pie-chart-container">
       <svg width={radius * 2 + strokeWidth} height={radius * 2 + strokeWidth}>
+        {/* Base Circle */}
         <circle
           className="base-circle"
           strokeWidth={strokeWidth}
@@ -17,16 +20,34 @@ const PieChart = ({ highlightedWidth }) => {
           cx={radius + strokeWidth / 2}
           cy={radius + strokeWidth / 2}
         />
-        <circle
-          className="highlight-circle"
-          strokeWidth={strokeWidth}
-          strokeDasharray={`${circumference} ${circumference}`}
-          strokeDashoffset={offset}
-          r={radius}
-          cx={radius + strokeWidth / 2}
-          cy={radius + strokeWidth / 2}
-          style={{ strokeWidth: strokeWidth }} 
-        />
+
+        {/* Income (Green) Circle */}
+        {incomePercentage > 0 && (
+          <circle
+            className="income-circle"
+            strokeWidth={strokeWidth}
+            r={radius}
+            cx={radius + strokeWidth / 2}
+            cy={radius + strokeWidth / 2}
+            strokeDasharray={`${incomeLength} ${circumference}`}
+            strokeDashoffset={0}
+            style={{ stroke: "#0CD1A5", fill: "none" }}
+          />
+        )}
+
+        {/* Expense (Red) Circle */}
+        {expensePercentage > 0 && (
+          <circle
+            className="expense-circle"
+            strokeWidth={strokeWidth}
+            r={radius}
+            cx={radius + strokeWidth / 2}
+            cy={radius + strokeWidth / 2}
+            strokeDasharray={`${expenseLength} ${circumference}`}
+            strokeDashoffset={-incomeLength}
+            style={{ stroke: "red", fill: "none" }}
+          />
+        )}
       </svg>
     </div>
   );
