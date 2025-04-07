@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "../styling/BalancePanelDashboard.css";
 import { useEffect, useState } from "react";
 
@@ -51,7 +51,7 @@ function BalancePanel() {
   return (
     <>
       <div className="panel">
-        <h2> Your Balance</h2>
+        <h2 style={{ marginTop: "10px" }}> Your Balance</h2>
 
         <div className="tbalance">
           <p>Total Balance:</p>
@@ -65,7 +65,7 @@ function BalancePanel() {
             style={{
               fontSize: "24px",
               fontWeight: "bold",
-              marginTop: "-15px",
+              marginTop: "-5px",
             }}
           >
             ${checkings}
@@ -73,7 +73,7 @@ function BalancePanel() {
 
           <p>Savings:</p>
           <p
-            style={{ fontSize: "24px", fontWeight: "bold", marginTop: "-15px" }}
+            style={{ fontSize: "24px", fontWeight: "bold", marginTop: "-5px" }}
           >
             ${savings}
           </p>
