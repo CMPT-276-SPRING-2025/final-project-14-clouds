@@ -34,7 +34,7 @@
   /* overlay for profile pic*/
 .profile-circle {
     position: absolute;
-    top: 1vh;
+    top: 10vh;
     left: 40vw;
     width: 50vw;
     height: 100vh;
@@ -46,15 +46,14 @@
 
 .Glowing-circle {
   position: absolute;
-  top: 30vh;
-  left: 60vw;
-  width: 20vw; /* Controls the size of the shadow */
-  height: 20vw; /* Make width and height equal */
+  color: white;
+  top: 33.5vh;
+  left: 63vw;
+  width: 15vw; /* Controls the size of the shadow */
+  height: 15vw; /* Make width and height equal */
   border-radius: 50%;
   background: transparent; 
   box-shadow: 0 0 5vw 5vw rgba(192, 222, 239, 0.7);
-  
-  
 
 }
 

@@ -6,13 +6,15 @@ import React from "react";
 function Home() {
   return (
     <>
-      <div className="Glowing-circle"></div>
+      
       <div className="welcome">
+     
         <Link to="/Login">
           <div className="start-button">Get started now</div>
         </Link>
 
         <div className="background-container">
+        <div className="Glowing-circle"></div>
           <div className="profile">
             <img src={Logo} alt="profile pic" className="profile-circle" />
           </div>
