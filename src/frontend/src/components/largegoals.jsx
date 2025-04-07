@@ -23,7 +23,7 @@ const BigGoals = ({ goalsArray, setterFunction }) => {
           <button
             className="deleteButton"
             onClick={() => {
-              alert(`deleted index ${index}`);
+              alert(`Deleted Goal #${index + 1}`);
               const updatedGoalsArray = goalsArray.filter(
                 (value, i) => index !== i
               );
@@ -62,6 +62,7 @@ const BigGoals = ({ goalsArray, setterFunction }) => {
           &nbsp;
           <input
             className="incrementInput"
+            placeholder="$100"
             id="input"
             onChange={(e) => {
               if (e.target.value !== "") {

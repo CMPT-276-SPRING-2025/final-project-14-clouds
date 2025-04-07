@@ -27,6 +27,7 @@ function LoginPanel({ displayStatus, setter }) {
             onChange={(event) => setUsername(event.target.value)}
           />
           <input
+            type="password"
             placeholder="Password"
             onChange={(event) => setPassword(event.target.value)}
             style={{ marginTop: "5vh" }}
