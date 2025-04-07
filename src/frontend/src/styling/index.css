@@ -8,11 +8,13 @@
     box-sizing: border-box;
 }
 
-.welcome{
+.welcome {
+    position: relative; /* Add this line */
     height: 100vh;
-    background-color: #17384B !important; 
-    font-family: 'Poppins', sans-serif; 
+    background-color: #17384B !important;
+    font-family: 'Poppins', sans-serif;
 }
+
 
   h1{
     font-size: 2.5em;
@@ -35,10 +37,10 @@
     height: 100vh;
     z-index: 1;
   }
-  .glowing-circle {
+.glowing-circle {
     position: absolute;
     top: 30vh;
-    left: 40vw;
+    left: 100vw;
     width: 20vw; /* Controls the size of the shadow */
     height: 20vw; /* Make width and height equal */
     border-radius: 50%;

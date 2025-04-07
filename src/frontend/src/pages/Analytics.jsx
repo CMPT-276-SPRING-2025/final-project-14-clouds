@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 
 
-<MyComponent numerator={75} denominator={100} /> 
+
  
 
 // Category selection panel with arrow buttons
@@ -114,8 +114,19 @@ function Analytics() {
     });
   };
 
+  // Calculate the total income (sum of all positive amounts)
+const totalIncome = filteredByMonth
+.filter(tx => tx.amount > 0)
+.reduce((sum, tx) => sum + tx.amount, 0);
+
+// Calculate the total activity (absolute sum of all transactions)
+const totalActivity = filteredByMonth
+.reduce((sum, tx) => sum + Math.abs(tx.amount), 0);
+
+
   return (
     <>
+      <MyComponent numerator={totalIncome} denominator={totalActivity} />
       <MenuPanel />
       <div className="analytics-page">
         <MonthSelector

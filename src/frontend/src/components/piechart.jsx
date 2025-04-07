@@ -16,10 +16,7 @@ const MyComponent = ({ numerator, denominator }) => {
 
   return (
     <div>
-      <h2>Financial Overview</h2>
-      <div style={{ width: '150px', height: '150px' }}>  
         <PieChart highlightedWidth={progress} />
-      </div>
     </div>
   );
 };
