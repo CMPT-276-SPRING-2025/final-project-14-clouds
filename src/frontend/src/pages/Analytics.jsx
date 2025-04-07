@@ -1,22 +1,21 @@
 import "../styling/Analytics.css";
 import "../styling/piechart.css";
-import MyComponent from "../components/piechart"; 
+import MyComponent from "../components/piechart";
 import MenuPanel from "../components/MenuPanel";
 import { useEffect, useState } from "react";
-
-
-
-
- 
 
 // Category selection panel with arrow buttons
 function CategorySelector({ categories, currentIndex, onPrev, onNext }) {
   return (
     <div className="category-selector-box">
       <div className="category-selector-inner">
-        <button className="arrow-button" onClick={onPrev}>{"<"}</button>
+        <button className="arrow-button" onClick={onPrev}>
+          {"<"}
+        </button>
         <h3>{categories[currentIndex].replace(/_/g, " ")}</h3>
-        <button className="arrow-button" onClick={onNext}>{">"}</button>
+        <button className="arrow-button" onClick={onNext}>
+          {">"}
+        </button>
       </div>
     </div>
   );
@@ -24,13 +23,21 @@ function CategorySelector({ categories, currentIndex, onPrev, onNext }) {
 
 // Month selection panel with arrow buttons
 function MonthSelector({ month, year, onPrev, onNext }) {
-  const monthName = new Date(year, month - 1).toLocaleString("default", { month: "long" });
+  const monthName = new Date(year, month - 1).toLocaleString("default", {
+    month: "long",
+  });
   return (
     <div className="month-selector-box">
       <div className="month-selector-inner">
-        <button className="arrow-button" onClick={onPrev}>{"<"}</button>
-        <div className="month-label">{monthName} {year}</div>
-        <button className="arrow-button" onClick={onNext}>{">"}</button>
+        <button className="arrow-button" onClick={onPrev}>
+          {"<"}
+        </button>
+        <div className="month-label">
+          {monthName} {year}
+        </div>
+        <button className="arrow-button" onClick={onNext}>
+          {">"}
+        </button>
       </div>
     </div>
   );
@@ -54,13 +61,15 @@ function Analytics() {
     "LOAN_PAYMENTS",
     "PERSONAL_CARE",
     "GENERAL_SERVICES",
-    "INCOME"
+    "INCOME",
   ];
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/getTransactions`);
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/getTransactions`
+        );
         if (!response.ok) throw new Error("Failed to fetch transactions");
         const transactionData = await response.json();
         setTransactions(transactionData.transactions);
@@ -74,11 +83,14 @@ function Analytics() {
   }, []);
 
   const selectedCategory = categories[categoryIndex];
-  const filteredByCategory = selectedCategory === "ALL"
-    ? transactions
-    : transactions.filter(tx => tx.personal_finance_category?.primary === selectedCategory);
+  const filteredByCategory =
+    selectedCategory === "ALL"
+      ? transactions
+      : transactions.filter(
+          (tx) => tx.personal_finance_category?.primary === selectedCategory
+        );
 
-  const filteredByMonth = filteredByCategory.filter(tx => {
+  const filteredByMonth = filteredByCategory.filter((tx) => {
     const date = new Date(tx.date);
     return date.getFullYear() === year && date.getMonth() + 1 === month;
   });
@@ -87,7 +99,9 @@ function Analytics() {
   const recentTransactions = filteredByMonth;
 
   const handlePrevCategory = () => {
-    setCategoryIndex((prev) => (prev - 1 + categories.length) % categories.length);
+    setCategoryIndex(
+      (prev) => (prev - 1 + categories.length) % categories.length
+    );
   };
 
   const handleNextCategory = () => {
@@ -95,9 +109,9 @@ function Analytics() {
   };
 
   const handlePrevMonth = () => {
-    setMonth(prev => {
+    setMonth((prev) => {
       if (prev === 1) {
-        setYear(y => y - 1);
+        setYear((y) => y - 1);
         return 12;
       }
       return prev - 1;
@@ -105,9 +119,9 @@ function Analytics() {
   };
 
   const handleNextMonth = () => {
-    setMonth(prev => {
+    setMonth((prev) => {
       if (prev === 12) {
-        setYear(y => y + 1);
+        setYear((y) => y + 1);
         return 1;
       }
       return prev + 1;
@@ -115,36 +129,38 @@ function Analytics() {
   };
 
   // Calculate the total income (sum of all positive amounts)
-const totalIncome = filteredByMonth
-.filter(tx => tx.amount > 0)
-.reduce((sum, tx) => sum + tx.amount, 0);
+  const totalIncome = filteredByMonth
+    .filter((tx) => tx.amount > 0)
+    .reduce((sum, tx) => sum + tx.amount, 0);
 
-const totalSpendings = filteredByMonth
-  .filter(tx => tx.amount < 0)
-  .reduce((sum, tx) => sum + Math.abs(tx.amount), 0);
+  const totalSpendings = filteredByMonth
+    .filter((tx) => tx.amount < 0)
+    .reduce((sum, tx) => sum + Math.abs(tx.amount), 0);
 
-// Calculate net income as income minus spendings
-const netIncome = totalIncome - totalSpendings;
-
-// Ensure we have non-negative values for the pie chart
-const safeNetIncome = netIncome > 0 ? netIncome : 0;
-const safeTotalIncome = totalIncome > 0 ? totalIncome : 1; // No division by zero 
-
+  // Calculate net income as income minus spendings
+  const netIncome = totalIncome - totalSpendings;
 
   return (
     <>
-      <MyComponent numerator={safeNetIncome} denominator={safeTotalIncome} />
+      <MyComponent
+        Net={netIncome}
+        totalIncome={totalIncome}
+        totalExpense={-totalSpendings}
+      />
       <MenuPanel />
       <div className="analytics-page">
         <MonthSelector
-          month={month} 
+          month={month}
           year={year}
           onPrev={handlePrevMonth}
           onNext={handleNextMonth}
         />
 
         <div className="total-spent-indicator">
-          Total: <span className={total < 0 ? "negative" : "positive"}>${Math.abs(total).toFixed(2)}</span>
+          Total:{" "}
+          <span className={total < 0 ? "negative" : "positive"}>
+            ${Math.abs(total).toFixed(2)}
+          </span>
         </div>
 
         <CategorySelector
@@ -189,7 +205,9 @@ const safeTotalIncome = totalIncome > 0 ? totalIncome : 1; // No division by zer
                 <tbody>
                   {recentTransactions.map((tx, index) => (
                     <tr key={index}>
-                      <td>{tx.merchant_name || tx.name || "Unknown Merchant"}</td>
+                      <td>
+                        {tx.merchant_name || tx.name || "Unknown Merchant"}
+                      </td>
                       <td className={tx.amount < 0 ? "negative" : "positive"}>
                         {tx.amount < 0
                           ? `-$${Math.abs(tx.amount).toFixed(2)}`

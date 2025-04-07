@@ -1,22 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import PieChart from './chartcomponent';
-import '../styling/piechart.css';  
+import React, { useState, useEffect } from "react";
+import PieChart from "./chartcomponent";
+import "../styling/piechart.css";
 
-const MyComponent = ({ numerator, denominator }) => {
-  const [progress, setProgress] = useState(0);
+const MyComponent = ({ totalIncome, totalExpense, Net }) => {
+  const [incomePercent, setIncomePercent] = useState(0);
+  const [costPercent, setCostPercent] = useState(0);
 
   useEffect(() => {
-    if (denominator !== 0) {
-      const percentage = (numerator / denominator) * 100;
-      setProgress(percentage);
+    const totalActivity = totalIncome + Math.abs(totalExpense);
+
+    if (totalActivity !== 0) {
+      const incomeContribution = (totalIncome / totalActivity) * 100;
+      const costContribution = (Math.abs(totalExpense) / totalActivity) * 100;
+
+      setIncomePercent(incomeContribution);
+      setCostPercent(costContribution);
     } else {
-      setProgress(0); // no division by zero
+      setIncomePercent(0);
+      setCostPercent(0);
     }
-  }, [numerator, denominator]);
+  }, [totalIncome, totalExpense, Net]);
 
   return (
     <div>
-        <PieChart highlightedWidth={progress} />
+      <PieChart
+        incomePercentage={incomePercent}
+        expensePercentage={costPercent}
+      />
     </div>
   );
 };
