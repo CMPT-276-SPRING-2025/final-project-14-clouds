@@ -24,9 +24,12 @@ node -v
 ```
 ###
 ### Step 1: Clone the Repository
+```bash
 git clone https://github.com/CMPT-276-SPRING-2025/final-project-14-clouds.git
-cd final-project-14-clouds
 
+# CD to directory
+cd final-project-14-clouds
+```
 ### Step 2: Change CORS settings in src/backend/server.js
 
 ```js
