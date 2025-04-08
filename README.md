@@ -27,7 +27,7 @@ node -v
 git clone https://github.com/CMPT-276-SPRING-2025/final-project-14-clouds.git
 cd final-project-14-clouds
 
-# Step 2: Change CORS settings in src/backend/server.js
+### Step 2: Change CORS settings in src/backend/server.js
 
 ```js
 # Replace:
@@ -45,15 +45,20 @@ app.use(cors({
    credentials: true,
 }));
 ```
+
 ### Step 3: Start the backend
+```bash
 cd src/backend
 npm install
 npm start
+```
 
 ### Step 4: Open a new terminal and start the frontend
+```bash
 cd src/frontend
 npm install
 npm run dev
+```
 
 ### Step 5: Open the link shown in the frontend terminal (usually http://localhost:5173)
 
@@ -64,23 +69,34 @@ npm run dev
 ## Frontend Tests:
 
 ### Step 1: Open a new terminal
+
 ### Step 2: Navigate to frontend
+```bash
 cd src/frontend
+```
 
 ### Step 3: Install dependencies
+```bash
 npm install
+```
 
 ### Step 4: Run tests
+```bash
 npm test
+```
 
 ## Backend Tests:
 
 ### Step 1: Open a new terminal
 ### Step 2: Navigate to backend
+```bash
 cd src/backend
-
+```
 ### Step 3: Install dependencies
+```bash
 npm install
-
+```
 ### Step 4: Run tests
+```bash
 npm test
+```
