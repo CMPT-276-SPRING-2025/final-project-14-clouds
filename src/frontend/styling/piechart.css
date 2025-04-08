@@ -1,0 +1,19 @@
+.pie-chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .base-circle {
+    fill: #e0e0e0; /* background */
+    stroke: #e0e0e0;
+  }
+  
+  .highlight-circle {
+    fill: transparent;
+    stroke: #0CD1A5; /* highlight color - green */
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg); /* Start the highlight at the top */
+    transition: stroke-dashoffset 0.3s ease-in-out; /* Optional animation */
+  }
