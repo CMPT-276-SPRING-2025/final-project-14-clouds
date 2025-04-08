@@ -1,9 +1,9 @@
-// tests/integration/Home.test.js
+
 
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import Home from "../../src/pages/Home"; // Adjust path if needed
+import Home from "../../src/pages/Home"; 
 
 describe("Home Page Integration Test", () => {
   it("renders the main elements correctly", () => {
