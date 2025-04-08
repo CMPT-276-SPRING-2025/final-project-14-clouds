@@ -24,7 +24,10 @@ function Dashboard({ goals, setGoals }) {
         <div className="dashboard-content1">
           <div className="placeholder-panel">
             <h3>Analytics</h3>
-            <p>Coming soon</p>
+            <p>Let's find room for improvement!</p>
+            <Link to="/Analytics">
+              <button>Analyze Net Finances</button>
+            </Link>
           </div>
           <div className="placeholder-panel2">
             <h3>Need some advice?</h3>

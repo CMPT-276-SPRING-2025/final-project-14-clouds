@@ -53,13 +53,21 @@
 
 /* Placeholder panels styling */
 .placeholder-panel {
-    background-color: #17384B; /* Same as other panels */
+    background: linear-gradient(145deg, #25292b, #17384B); /* Subtle gradient for a cooler effect */
     padding: 2rem;
-    border-radius: 15px;
+    border-radius: 20px;
     width: 100%;
+    max-width: 100%;
     height: 35vh;
+    max-height: 100%;
     margin-bottom: 1.5rem;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Ensure text and button are centered */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for a modern look */
 }
 .placeholder-panel2 {
     background: linear-gradient(145deg, #25292b, #17384B); /* Subtle gradient for a cooler effect */
@@ -78,6 +86,15 @@
     text-align: center; /* Ensure text and button are centered */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for a modern look */
 }
+.placeholder-panel h3 {
+    font-size: 1.5rem; /* Bigger font for the heading */
+    font-weight: 600; /* Bold text */
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: uppercase; /* For a modern touch */
+    letter-spacing: 1px; /* Spacing between letters for cleaner look */
+}
+
 
 .placeholder-panel2 h3 {
     font-size: 1.5rem; /* Bigger font for the heading */
@@ -116,6 +133,29 @@
 }
 
 .placeholder-panel2 button:active {
+    transform: scale(1); /* Return to original size when clicked */
+}
+
+.placeholder-panel button {
+    background-color: #0CD1A5;  /* Vibrant button color */
+    color: #17384B;
+    padding: 20px 24px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px; /* Rounded button for a modern look */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+.placeholder-panel button:hover {
+    background-color: #07a87f;  /* Slightly darker shade for hover */
+    transform: scale(1.05); /* Button grow effect on hover */
+    color: #D5D7D8;
+}
+
+.placeholder-panel button:active {
     transform: scale(1); /* Return to original size when clicked */
 }
 
