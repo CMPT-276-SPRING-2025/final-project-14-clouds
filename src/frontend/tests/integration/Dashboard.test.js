@@ -33,7 +33,8 @@ describe('Dashboard Page Integration Test', () => {
 
     // Check for Analytics placeholder
     expect(screen.getByText('Analytics')).toBeInTheDocument();
-    expect(screen.getByText('Coming soon')).toBeInTheDocument();
+    expect(screen.getByText("Let's find room for improvement!")).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Analyze Net Finances/i })).toBeInTheDocument();
 
     // Check for Advice section
     expect(screen.getByText('Need some advice?')).toBeInTheDocument();
