@@ -1,6 +1,6 @@
-import React from 'react';  // Ensure React is imported
+import React from 'react';  
 import { render, screen } from '@testing-library/react';
-import YourGoalsAccount from '../src/components/AccActivityGoals'; // Path to YourGoalsAccount component
+import YourGoalsAccount from '../src/components/AccActivityGoals'; 
 
 // Mock data for testing
 const mockGoalsArray = [

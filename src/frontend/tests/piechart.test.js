@@ -1,7 +1,7 @@
-// tests/MyComponent.test.js
+
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import MyComponent from '../src/components/piechart'; // Adjust path if needed
+import MyComponent from '../src/components/piechart'; 
 import PieChart from '../src/components/chartcomponent';
 
 // Mock PieChart separately (we don't care about SVG details here)

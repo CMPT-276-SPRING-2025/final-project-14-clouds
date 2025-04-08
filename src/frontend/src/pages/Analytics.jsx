@@ -2,7 +2,7 @@ import "../styling/Analytics.css";
 import "../styling/piechart.css";
 import MyComponent from "../components/piechart";
 import MenuPanel from "../components/MenuPanel";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Category selection panel with arrow buttons
 function CategorySelector({ categories, currentIndex, onPrev, onNext }) {

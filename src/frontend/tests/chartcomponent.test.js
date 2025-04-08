@@ -1,4 +1,4 @@
-// tests/PieChart.test.js
+
 import React from 'react';
 import { render } from '@testing-library/react';
 import PieChart from '../src/components/chartcomponent'; // adjust the import path if needed
